@@ -383,9 +383,9 @@
  */
 
 /* Accuracy of timings and human fatigue controlled by next two lines */
-/*#define LOOPS	5000		/* Use this for slow or 16 bit machines */
+//#define LOOPS	5000		/* Use this for slow or 16 bit machines */
 #define LOOPS	50000           /* Use this for slow or 16 bit machines */
-/*#define LOOPS	500000		/* Use this for faster machines */
+//#define LOOPS	500000		/* Use this for faster machines */
 
 /* Compiler dependent options */
 #undef	NOENUM                  /* Define if compiler has no enum's */
@@ -393,13 +393,13 @@
 
 /* define only one of the next two defines */
 #define TIMES                   /* Use times(2) time function */
-/*#define TIME			/* Use time(2) time function */
+//*#define TIME			/* Use time(2) time function */
 
 /* define the granularity of your times(2) function (when used) */
 #define HZ      100             /* times(2) returns 1/60 second (most) */
 
 /* for compatibility with goofed up version */
-/*#define GOOF			/* Define if you want the goofed up version */
+//#define GOOF			/* Define if you want the goofed up version */
 
 #ifdef GOOF
 char Version[] = "1.0";

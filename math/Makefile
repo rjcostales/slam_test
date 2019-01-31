@@ -1,4 +1,4 @@
-CC = clang
+CC     = clang
 CFLAGS = -Ofast
 LFLAGS = -lm
 
@@ -6,16 +6,16 @@ TARGETS = math.o mathTest factorize area pi semi primes randgen sizes dhrystone 
 SOURCES = *.c
 HEADERS = *.h
 
-all: math factorize area pi semi primes randgen sizes dhrystone whetstone 
+all: math mathTest factorize primes randgen area pi semi sizes dhrystone whetstone
 
-math: math.o math.h
+math: math.c
 	$(CC) $(CFLAGS) -c math.c -o math.o
 
 mathTest: mathTest.c
 	$(CC) $(CFLAGS) mathTest.c math.o -o mathTest
 
-factorize: math.c
-	$(CC) $(CFLAGS) -c factorize.c -o factorize
+factorize: factorize.c
+	$(CC) $(CFLAGS) factorize.c -o factorize $(LFLAGS)
 
 area: area.c
 	$(CC) $(CFLAGS) area.c -o area $(LFLAGS)
@@ -39,7 +39,7 @@ dhrystone: dhrystone.c
 	$(CC) $(CFLAGS) dhrystone.c -o dhrystone
 
 whetstone: whetstone.c
-	$(CC) $(LFLAGS) whetstone.c -o whetstone
+	$(CC) whetstone.c -o whetstone $(LFLAGS)
 
 clean:
 	rm -f $(TARGETS)
