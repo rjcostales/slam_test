@@ -1,26 +1,21 @@
+/* C Program To Sort page in ascending order using bubble sort. */
 #include <stdio.h>
-#include "strfunc.h"
+#include <stdlib.h>
+#include <string.h>
 
-int main(int argc, char * argv[])
+#define MAXLINE 1024
+#define MAXSIZE 1024
+
+typedef char * str;
+
+int main(int argc, char *argv[])
 {
-    char r[12] = "  right  ";
+    str temp, string;
 
-    printf("%s<\n", r);
-    printf("%s<\n", rtrim(r));
-
-    char s[12] = "  left  ";
-    printf("%s<\n", s);
-    printf("%s<\n", ltrim(s));
-
-    char t[12] = "  middle  ";
-    printf("%s<\n", t);
-    printf("%s<\n", trim(t));
-
-    printf("f %d\n", '\f');
-    printf("n %d\n", '\n');
-    printf("r %d\n", '\r');
-    printf("t %d\n", '\t');
-    printf("v %d\n", '\v');
-
+    printf("%p\n", string);
+    string = malloc(16);
+    strcpy(string, "this is a test\n");
+    fputs(string, stdout);
+    printf("%p\n", string);
     return 0;
 }
