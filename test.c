@@ -16,6 +16,13 @@ int main(int argc, char *argv[])
     string = malloc(16);
     strcpy(string, "this is a test\n");
     fputs(string, stdout);
+
     printf("%p\n", string);
+    printf("f %d\n", '\f');
+    printf("n %d\n", '\n');
+    printf("r %d\n", '\r');
+    printf("t %d\n", '\t');
+    printf("v %d\n", '\v');
+
     return 0;
 }

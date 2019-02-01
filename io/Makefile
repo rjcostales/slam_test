@@ -1,4 +1,4 @@
-CC = clang
+CC     = clang
 CFLAGS = -Ofast
 
 OBJECTS = read write write1 write2 write3

@@ -9,7 +9,7 @@ HEADERS = *.h
 all: $(TARGETS)
 
 strTest:
-	$(CC) $(CLANG) -o strTest strTest.c strfunc.o
+	$(CC) $(CFLAGS) -o strTest strTest.c strfunc.o
 
 clean:
 	rm -f $(TARGETS)
