@@ -1,7 +1,6 @@
 area
 dhrystone
 factorize
-Makefile
 math.o
 mathTest
 pi
