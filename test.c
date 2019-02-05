@@ -6,7 +6,7 @@
 #define MAXLINE 1024
 #define MAXSIZE 1024
 
-typedef char * str;
+typedef char *str;
 
 int main(int argc, char *argv[])
 {
