@@ -13,10 +13,12 @@ int main(int argc, char *argv[])
     char line[MAXLINE];
     str  page[MAXSIZE], temp;
 
-    for (size = 0; fgets(line, MAXLINE, stdin); size++) {
-        page[size] = (char *) malloc(strlen(line));
-        strcpy(page[size], line);
+    for (i = 0; fgets(line, MAXLINE, stdin); i++) {
+        page[i] = calloc(strlen(line) + 1, sizeof(char));
+        strcpy(page[i], line);
     }
+
+    size = i;
 
     // insertion sort
     for (r = 1; r < size; r++) {

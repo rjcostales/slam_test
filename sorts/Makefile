@@ -1,8 +1,7 @@
 CC     = clang
 CFLAGS = -Ofast -Wall
-LFLAGS = -Lm
 
-TARGETS = sort bubble selection insertion merge
+TARGETS = quicksort bubble selection insertion merge
 SOURCES = *.c
 HEADERS = *.h
 

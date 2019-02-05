@@ -9,22 +9,22 @@ typedef char * str;
 
 int main(int argc, char *argv[])
 {
-    int  i, j, min, count;
+    int  i, j, min, size;
     char line[MAXLINE];
-    str  temp, page[MAXSIZE];
+    str  page[MAXSIZE], temp;
 
     for (i = 0; fgets(line, MAXLINE, stdin); i++) {
         page[i] = calloc(strlen(line) + 1, sizeof(char));
         strcpy(page[i], line);
     }
 
-    count = i;
+    size = i;
 
     // selection sort
-    for (i = 0; i < count; i++) {
+    for (i = 0; i < size; i++) {
         min = i;
 
-        for (j = i; j < count; j++) {
+        for (j = i; j < size; j++) {
             if (strcmp(page[min], page[j]) > 0)
                 min = j;
         }
