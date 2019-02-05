@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <math.h>
 
-int main(int argc, char *argv[])
+int main(int argc, char * argv[])
 {
-    double area = 0.0;
+    double area  = 0.0;
     double delta = M_PI / 1000000;
 
     for (int i = 0; i < 1000000; i++) {

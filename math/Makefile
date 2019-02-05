@@ -2,11 +2,11 @@ CC     = clang
 CFLAGS = -Ofast
 LFLAGS = -lm
 
-TARGETS = math.o mathTest factorize area pi semi primes randgen sizes dhrystone whetstone a.out
+TARGETS = math.o mathTest factorize sine_area pi_archemides semi_cir_length primes randgen dhrystone whetstone a.out
 SOURCES = *.c
 HEADERS = *.h
 
-all: math mathTest factorize primes randgen area pi semi sizes dhrystone whetstone
+all: math mathTest factorize primes randgen sine_area pi_archemides semi_cir_length dhrystone whetstone
 
 math: math.c
 	$(CC) $(CFLAGS) -c math.c -o math.o
@@ -17,23 +17,20 @@ mathTest: mathTest.c
 factorize: factorize.c
 	$(CC) $(CFLAGS) factorize.c -o factorize $(LFLAGS)
 
-area: area.c
-	$(CC) $(CFLAGS) area.c -o area $(LFLAGS)
+sine_area: sine_area.c
+	$(CC) $(CFLAGS) sine_area.c -o sine_area $(LFLAGS)
 
-pi: pi.c
-	$(CC) $(CFLAGS) pi.c -o pi $(LFLAGS)
+pi_archemides: pi_archemides.c
+	$(CC) $(CFLAGS) pi_archemides.c -o pi_archemides $(LFLAGS)
 
-semi: semi.c
-	$(CC) $(CFLAGS) semi.c -o semi $(LFLAGS)
+semi_cir_length: semi_cir_length.c
+	$(CC) $(CFLAGS) semi_cir_length.c -o semi_cir_length $(LFLAGS)
 
 primes: primes.c
 	$(CC) $(CFLAGS) primes.c -o primes
 
 randgen: randgen.c
 	$(CC) $(CFLAGS) randgen.c -o randgen
-
-sizes: sizes.c
-	$(CC) $(CFLAGS) sizes.c -o sizes
 
 dhrystone: dhrystone.c
 	$(CC) $(CFLAGS) dhrystone.c -o dhrystone

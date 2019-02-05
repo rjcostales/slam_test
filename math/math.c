@@ -12,6 +12,7 @@ int fibonacci(int f)
 {
     if (f == 0)
         return 1;
+
     if (f == 1)
         return 1;
     else
@@ -19,15 +20,15 @@ int fibonacci(int f)
 }
 
 /*****
-   int gcd(int a, int b)
-   {
-       if (a == 0)
-       return b;
-       else if (b >= a)
-       return gcd(a, b - a);
-       else
-       return gcd(b, a);
-   }
+*  int gcd(int a, int b)
+*  {
+*      if (a == 0)
+*      return b;
+*      else if (b >= a)
+*      return gcd(a, b - a);
+*      else
+*      return gcd(b, a);
+*  }
 *****/
 
 int lcm(int a, int b)
@@ -55,6 +56,7 @@ int power(int a, int b)
 {
     if (b == 0)
         return 1;
+
     if (b == 1)
         return a;
     else

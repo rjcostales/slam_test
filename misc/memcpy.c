@@ -23,5 +23,4 @@ int main(int argc, char *argv[])
 
     for (i = 0; i < 16; i++)
         printf("%02x\n", *cp++);
-
 }
