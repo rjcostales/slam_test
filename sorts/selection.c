@@ -3,7 +3,7 @@
 #include <string.h>
 
 #define MAXLINE 1024
-#define MAXSIZE 1024
+#define MAXSIZE 40000
 
 typedef char * str;
 
