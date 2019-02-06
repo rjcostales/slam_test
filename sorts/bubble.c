@@ -6,13 +6,13 @@
 #define MAXLINE 1024
 #define MAXSIZE 40000
 
-typedef char * str;
+typedef char *str;
 
 int main(int argc, char *argv[])
 {
-    int  i, size;
+    int  i, j, size;
     char line[MAXLINE];
-    str  temp, page[MAXSIZE];
+    str  tmp, page[MAXSIZE];
 
     for (i = 0; fgets(line, MAXLINE, stdin); i++) {
         page[i] = calloc(strlen(line) + 1, sizeof(char));
@@ -21,16 +21,16 @@ int main(int argc, char *argv[])
 
     size = i;
 
-    for (int step = 0; step < size - 1; ++step)
-        for (int i = 0; i < size - step - 1; ++i) {
-            if (strcmp(page[i], page[i + 1]) > 0) {
-                temp = page[i];
-                page[i] = page[i + 1];
-                page[i + 1] = temp;
+    for (i = 0; i < size - 1; ++i)
+        for (j = 0; j < size - i - 1; ++j) {
+            if (strcmp(page[j], page[j + 1]) > 0) {
+                tmp = page[j];
+                page[j] = page[j + 1];
+                page[j + 1] = tmp;
             }
         }
 
-    for (int i = 0; page[i] != NULL; i++)
+    for (i = 0; page[i] != NULL; i++)
         fputs(page[i], stdout);
 
     return 0;

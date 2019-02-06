@@ -1,74 +1,75 @@
 /* mergesort example */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
 
 #define MAXLINE 1024
-#define MAXSIZE 1024
+#define MAXSIZE 40000
 
-#define KEYSIZE 15
+typedef char *str;
 
-void merge(int a[], int b[], int c[], int m, int n)
+void merge(str array[], str left[], str right[], int size_l, int size_r)
 {
     int i = 0, j = 0, k = 0;
 
-    while (i < m && j < n)
-        if (a[i] < b[j])
-            c[k++] = a[i++];
+    while (i < size_l && j < size_r) {
+        if (strcmp(left[i], right[j]) < 0)
+            array[k++] = left[i++];
         else
-            c[k++] = b[j++];
-    while (i < m)
-        c[k++] = a[i++];
-    while (j < n)
-        c[k++] = b[j++];
+            array[k++] = right[j++];
+    }
+
+    while (i < size_l)
+        array[k++] = left[i++];
+
+    while (j < size_r)
+        array[k++] = right[j++];
 }
 
-void mergesort(int key[], int n)
+void mergesort(str array[], int size)
 {
-    int i, j, k, *w;
+    int i, j;
+    i = j = 0;
 
-    if (n > 1) {
-        j = n / 2;
-        k = n - j;
+    if (size > 1) {
+        i = size / 2;
+        j = size - i;
 
-        mergesort(key, j);
-        mergesort(key + j, k);
+        str left[i];
+        str right[j];
 
-        w = calloc(n, sizeof(int));
+        for(int n = 0; n < i; n++) left[n] = array[n];
+        mergesort(left, i);
 
-        merge(key, key + j, w, j, k);
+        for(int n = 0; n < j; n++) right[n] = array[n + i];
+        mergesort(right, j);
 
-        for (i = 0; i < n; i++)
-            key[i] = w[i];
-
-        free(w);
+        merge(array, left, right, i, j);
     }
 }
 
-int randint(int bound)
-{
-    return rand() % bound;
+void print(str a[], int n){
+    for (int i = 0; i < n; i++)
+        fputs(a[i], stdout);
+
 }
 
 int main(int argc, char *argv[])
 {
-    int i, key[KEYSIZE];
+    int  size;
+    char line[MAXLINE];
+    str  page[MAXSIZE];
 
-    srand(time(NULL));
-    for (i = 0; i < KEYSIZE; i++)
-        key[i] = randint(100) - 50;
+    for (size = 0; fgets(line, MAXLINE, stdin); size++) {
+        page[size] = calloc(strlen(line) + 1, sizeof(char));
+        strcpy(page[size], line);
+    }
 
-    printf("Before mergesort:\n");
-    for (i = 0; i < KEYSIZE; i++)
-        printf("%4d", key[i]);
-    putchar('\n');
+    mergesort(page, size);
+    print(page, size);
 
-    mergesort(key, KEYSIZE);
+    // for (size = 0; page[size] != NULL; size++)
+    //     fputs(page[size], stdout);
 
-    printf("After mergesort:\n");
-    for (i = 0; i < KEYSIZE; i++)
-        printf("%4d", key[i]);
-    putchar('\n');
+    return 0;
 }
