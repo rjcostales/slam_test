@@ -1,4 +1,4 @@
-/* mergesort example */
+/* merge_sort example */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -26,7 +26,7 @@ void merge(str array[], str left[], str right[], int size_l, int size_r)
         array[k++] = right[j++];
 }
 
-void mergesort(str array[], int size)
+void merge_sort(str array[], int size)
 {
     int i, j;
     i = j = 0;
@@ -40,11 +40,11 @@ void mergesort(str array[], int size)
 
         for (int n = 0; n < i; n++)
             left[n] = array[n];
-        mergesort(left, i);
+        merge_sort(left, i);
 
         for (int n = 0; n < j; n++)
             right[n] = array[n + i];
-        mergesort(right, j);
+        merge_sort(right, j);
 
         merge(array, left, right, i, j);
     }
@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
         strcpy(page[size], line);
     }
 
-    mergesort(page, size);
+    merge_sort(page, size);
 
     print(page, size);
 

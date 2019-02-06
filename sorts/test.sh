@@ -1,4 +1,8 @@
 clear
+
+echo "generate"
+generate > data.txt
+
 echo "bubble"
 time bubble < data.txt > /dev/null
 
