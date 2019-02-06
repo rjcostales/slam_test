@@ -7,6 +7,12 @@
 
 typedef char *str;
 
+void print(str strings[])
+{
+    for (int i = 0; strings[i] != NULL; i++)
+        fputs(strings[i], stdout);
+}
+
 static int compare(const void *a, const void *b)
 {
     /* The pointers point to offsets into "array",
@@ -28,8 +34,7 @@ int main(int argc, char *argv[])
 
     qsort(page, size, sizeof(const char *), compare);
 
-    for (int i = 0; i < size; i++)
-        fputs(page[i], stdout);
+    print(page);
 
     return 0;
 }
