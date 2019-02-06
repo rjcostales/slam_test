@@ -3,7 +3,7 @@
 #define BUF 101
 #define MAX 100
 #define NDX 99
-#define LEN 10000
+#define LEN 25000
 
 int seed = 1234567890;
 // int seed = 0;
