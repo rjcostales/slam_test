@@ -38,17 +38,20 @@ void mergesort(str array[], int size)
         str left[i];
         str right[j];
 
-        for(int n = 0; n < i; n++) left[n] = array[n];
+        for (int n = 0; n < i; n++)
+            left[n] = array[n];
         mergesort(left, i);
 
-        for(int n = 0; n < j; n++) right[n] = array[n + i];
+        for (int n = 0; n < j; n++)
+            right[n] = array[n + i];
         mergesort(right, j);
 
         merge(array, left, right, i, j);
     }
 }
 
-void print(str a[], int n){
+void print(str a[], int n)
+{
     for (int i = 0; i < n; i++)
         fputs(a[i], stdout);
 
@@ -56,9 +59,9 @@ void print(str a[], int n){
 
 int main(int argc, char *argv[])
 {
-    int  size;
+    int size;
     char line[MAXLINE];
-    str  page[MAXSIZE];
+    str page[MAXSIZE];
 
     for (size = 0; fgets(line, MAXLINE, stdin); size++) {
         page[size] = calloc(strlen(line) + 1, sizeof(char));

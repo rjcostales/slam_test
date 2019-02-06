@@ -5,7 +5,7 @@
 #define MAXLINE 1024
 #define MAXSIZE 40000
 
-typedef char * str;
+typedef char *str;
 
 static int compare(const void *a, const void *b)
 {
@@ -17,9 +17,9 @@ static int compare(const void *a, const void *b)
 
 int main(int argc, char *argv[])
 {
-    int  i;
+    int i;
     char line[MAXLINE];
-    str  page[MAXSIZE];
+    str page[MAXSIZE];
 
     for (i = 0; fgets(line, MAXLINE, stdin); i++) {
         page[i] = calloc(strlen(line) + 1, sizeof(char));

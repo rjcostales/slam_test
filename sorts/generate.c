@@ -11,8 +11,8 @@ int seed = 1234567890;
 int rand()
 {
     // Numeric Recipies
-    const int a    = 1664525;
-    const int c    = 1013904223;
+    const int a = 1664525;
+    const int c = 1013904223;
     // primes
     // const int a = 655541;
     // const int c = 2147483629;
