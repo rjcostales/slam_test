@@ -1,7 +1,7 @@
 clear
 
 echo "generate"
-generate > data.txt
+generate 25000 > data.txt
 
 echo "bubble"
 time bubble < data.txt > /dev/null

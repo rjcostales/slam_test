@@ -4,7 +4,7 @@
 #include <string.h>
 
 #define MAXLINE 1024
-#define MAXSIZE 40000
+#define MAXSIZE 50000
 
 typedef char *str;
 
@@ -54,8 +54,9 @@ void merge_sort(str array[], int size)
             left[n] = array[n];
         merge_sort(left, i);
 
+        str *tmp= &array[i];
         for (int n = 0; n < j; n++)
-            right[n] = array[n + i];
+            right[n] = tmp[n];
         merge_sort(right, j);
 
         merge(array, left, right, i, j);
