@@ -7,6 +7,18 @@
 
 typedef char *str;
 
+int read(str strings[])
+{
+    int size;
+    char line[MAXLINE];
+
+    for (size = 0; fgets(line, MAXLINE, stdin); size++) {
+        strings[size] = calloc(strlen(line) + 1, sizeof(char));
+        strcpy(strings[size], line);
+    }
+    return size;
+}
+
 void print(str strings[])
 {
     for (int i = 0; strings[i] != NULL; i++)
@@ -23,14 +35,9 @@ static int compare(const void *a, const void *b)
 
 int main(int argc, char *argv[])
 {
-    int  size;
-    char line[MAXLINE];
     str  page[MAXSIZE];
 
-    for (size = 0; fgets(line, MAXLINE, stdin); size++) {
-        page[size] = calloc(strlen(line) + 1, sizeof(char));
-        strcpy(page[size], line);
-    }
+    int  size = read(page);
 
     qsort(page, size, sizeof(const char *), compare);
 

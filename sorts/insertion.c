@@ -7,6 +7,18 @@
 
 typedef char *str;
 
+int read(str strings[])
+{
+    int size;
+    char line[MAXLINE];
+
+    for (size = 0; fgets(line, MAXLINE, stdin); size++) {
+        strings[size] = calloc(strlen(line) + 1, sizeof(char));
+        strcpy(strings[size], line);
+    }
+    return size;
+}
+
 void print(str strings[])
 {
     for (int i = 0; strings[i] != NULL; i++)
@@ -15,14 +27,8 @@ void print(str strings[])
 
 int main(int argc, char *argv[])
 {
-    int  i, j, size;
-    char line[MAXLINE];
     str  tmp, page[MAXSIZE];
-
-    for (size = 0; fgets(line, MAXLINE, stdin); size++) {
-        page[size] = calloc(strlen(line) + 1, sizeof(char));
-        strcpy(page[size], line);
-    }
+    int  i, j, size = read(page);
 
     // insertion sort
     for (i = 1; i < size; i++) {
