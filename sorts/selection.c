@@ -7,24 +7,28 @@
 
 typedef char *str;
 
+void print(str strings[])
+{
+    for (int i = 0; strings[i] != NULL; i++)
+        fputs(strings[i], stdout);
+}
+
 int main(int argc, char *argv[])
 {
-    int i, j, min, size;
+    int  min, size;
     char line[MAXLINE];
-    str tmp, page[MAXSIZE];
+    str  tmp, page[MAXSIZE];
 
-    for (i = 0; fgets(line, MAXLINE, stdin); i++) {
-        page[i] = calloc(strlen(line) + 1, sizeof(char));
-        strcpy(page[i], line);
+    for (size = 0; fgets(line, MAXLINE, stdin); size++) {
+        page[size] = calloc(strlen(line) + 1, sizeof(char));
+        strcpy(page[size], line);
     }
 
-    size = i;
-
     // selection sort
-    for (i = 0; i < size; i++) {
-        min = i;
+    for (int i = 0; i < size; i++) {
 
-        for (j = i; j < size; j++) {
+        min = i;
+        for (int j = i; j < size; j++) {
             if (strcmp(page[min], page[j]) > 0)
                 min = j;
         }
@@ -34,8 +38,7 @@ int main(int argc, char *argv[])
         page[min] = tmp;
     }
 
-    for (i = 0; page[i] != NULL; i++)
-        fputs(page[i], stdout);
+    print(page);
 
     return 0;
 }

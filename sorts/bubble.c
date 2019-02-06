@@ -8,6 +8,12 @@
 
 typedef char *str;
 
+void print(str strings[])
+{
+    for (int i = 0; strings[i] != NULL; i++)
+        fputs(strings[i], stdout);
+}
+
 int main(int argc, char *argv[])
 {
     int  size;
@@ -28,8 +34,7 @@ int main(int argc, char *argv[])
             }
         }
 
-    for (int i = 0; page[i] != NULL; i++)
-        fputs(page[i], stdout);
+    print(page);
 
     return 0;
 }

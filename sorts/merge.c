@@ -50,11 +50,10 @@ void merge_sort(str array[], int size)
     }
 }
 
-void print(str a[], int n)
+void print(str strings[])
 {
-    for (int i = 0; i < n; i++)
-        fputs(a[i], stdout);
-
+    for (int i = 0; strings[i] != NULL; i++)
+        fputs(strings[i], stdout);
 }
 
 int main(int argc, char *argv[])
@@ -70,7 +69,7 @@ int main(int argc, char *argv[])
 
     merge_sort(page, size);
 
-    print(page, size);
+    print(page);
 
     // for (size = 0; page[size] != NULL; size++)
     //     fputs(page[size], stdout);
