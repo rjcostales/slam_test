@@ -69,6 +69,7 @@ int main(int argc, char *argv[])
     }
 
     mergesort(page, size);
+
     print(page, size);
 
     // for (size = 0; page[size] != NULL; size++)

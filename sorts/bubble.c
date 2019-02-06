@@ -10,19 +10,17 @@ typedef char *str;
 
 int main(int argc, char *argv[])
 {
-    int i, j, size;
+    int  size;
     char line[MAXLINE];
-    str tmp, page[MAXSIZE];
+    str  tmp, page[MAXSIZE];
 
-    for (i = 0; fgets(line, MAXLINE, stdin); i++) {
-        page[i] = calloc(strlen(line) + 1, sizeof(char));
-        strcpy(page[i], line);
+    for (size = 0; fgets(line, MAXLINE, stdin); size++) {
+        page[size] = calloc(strlen(line) + 1, sizeof(char));
+        strcpy(page[size], line);
     }
 
-    size = i;
-
-    for (i = 0; i < size - 1; ++i)
-        for (j = 0; j < size - i - 1; ++j) {
+    for (int i = 0; i < size - 1; ++i)
+        for (int j = 0; j < size - i - 1; ++j) {
             if (strcmp(page[j], page[j + 1]) > 0) {
                 tmp = page[j];
                 page[j] = page[j + 1];
@@ -30,7 +28,7 @@ int main(int argc, char *argv[])
             }
         }
 
-    for (i = 0; page[i] != NULL; i++)
+    for (int i = 0; page[i] != NULL; i++)
         fputs(page[i], stdout);
 
     return 0;

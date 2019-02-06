@@ -17,18 +17,18 @@ static int compare(const void *a, const void *b)
 
 int main(int argc, char *argv[])
 {
-    int i;
+    int  size;
     char line[MAXLINE];
-    str page[MAXSIZE];
+    str  page[MAXSIZE];
 
-    for (i = 0; fgets(line, MAXLINE, stdin); i++) {
-        page[i] = calloc(strlen(line) + 1, sizeof(char));
-        strcpy(page[i], line);
+    for (size = 0; fgets(line, MAXLINE, stdin); size++) {
+        page[size] = calloc(strlen(line) + 1, sizeof(char));
+        strcpy(page[size], line);
     }
 
-    qsort(page, i, sizeof(const char *), compare);
+    qsort(page, size, sizeof(const char *), compare);
 
-    for (i = 0; page[i] != NULL; i++)
+    for (int i = 0; i < size; i++)
         fputs(page[i], stdout);
 
     return 0;
