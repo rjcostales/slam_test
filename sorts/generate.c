@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlibtes.h>
 
 #define BUF 101
 #define MAX 100
@@ -6,25 +7,14 @@
 #define LEN 25000
 
 int seed = 1234567890;
-// int seed = 0;
-
-int rand()
-{
-    // Numeric Recipies
-    const int a = 1664525;
-    const int c = 1013904223;
-    // primes
-    // const int a = 655541;
-    // const int c = 2147483629;
-    seed = (a * seed + c) & 0xffffffff;
-    return seed;
-}
 
 int main(int argc, char *argv[])
 {
     const char characters[] =
         "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzrj";
     char buffer[BUF] = { '\0' };
+
+    srand(seed);
 
     for (int i = 0; i < LEN; i++) {
         char *ptr = &buffer[0];
