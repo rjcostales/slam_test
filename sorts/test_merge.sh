@@ -1,16 +1,17 @@
 clear
 
-echo "bubble"
-time bubble < data.txt > /dev/null
-
-echo "selection"
-time selection < data.txt > /dev/null
-
-echo "insertion"
-time insertion < data.txt > /dev/null
-
-echo "merge"
+echo "5K"
+generate 5000 > data.txt
 time merge < data.txt > /dev/null
 
-echo "quicksort"
-time quicksort < data.txt > /dev/null
+echo "10K"
+generate 10000 > data.txt
+time merge < data.txt > /dev/null
+
+echo "15K"
+generate 15000 > data.txt
+time merge < data.txt > /dev/null
+
+echo "20K"
+generate 20000 > data.txt
+time merge < data.txt > /dev/null
