@@ -1,19 +1,19 @@
 clear
 
 echo "generate"
-generate > data.txt
+generate 25000 > data.txt
 
-echo "bubble"
 time bubble < data.txt > /dev/null
+echo "bubble"
 
-echo "selection"
 time selection < data.txt > /dev/null
+echo "selection"
 
-echo "insertion"
 time insertion < data.txt > /dev/null
+echo "insertion"
 
-echo "merge"
 time merge < data.txt > /dev/null
+echo "merge"
 
-echo "quicksort"
 time quicksort < data.txt > /dev/null
+echo "quicksort"

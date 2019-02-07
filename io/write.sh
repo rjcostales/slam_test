@@ -1,17 +1,16 @@
 clear
+
 echo 'write test'
-time ./write > test.txt
+time ./write > /dev/null
 
 echo ''
 echo 'write1 test'
-time ./write1 > test1.txt
+time ./write1 > /dev/null
 
 echo ''
 echo 'write2 test'
-time ./write2 > test2.txt
+time ./write2 > /dev/null
 
 echo ''
 echo 'write3 test'
-time ./write3 > test3.txt
-
-rm test1.txt test2.txt test3.txt
+time ./write3 > /dev/null

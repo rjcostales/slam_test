@@ -4,6 +4,4 @@
 a.out
 *.o
 
-*.txt
-
 strtest

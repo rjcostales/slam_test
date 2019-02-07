@@ -1,32 +1,29 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define BUF 101
 #define MAX 100
 #define NDX 99
-#define LEN 25000
+#define LEN 25
 
-int seed = 1234567890;
-// int seed = 0;
-
-int rand()
-{
-    // Numeric Recipies
-    const int a = 1664525;
-    const int c = 1013904223;
-    // primes
-    // const int a = 655541;
-    // const int c = 2147483629;
-    seed = (a * seed + c) & 0xffffffff;
-    return seed;
-}
 
 int main(int argc, char *argv[])
 {
     const char characters[] =
         "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzrj";
     char buffer[BUF] = { '\0' };
+    int seed = 1234567890;
+    int n = LEN;
 
-    for (int i = 0; i < LEN; i++) {
+
+    switch (argc) {
+    case 3: seed = atoi(argv[2]);
+    case 2: n = atoi(argv[1]);
+    }
+
+    srand(seed);
+    
+    for (int i = 0; i < n; i++) {
         char *ptr = &buffer[0];
         for (int n = 0; n < 20; n++) {
             int r = rand();
