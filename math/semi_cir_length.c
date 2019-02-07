@@ -23,5 +23,5 @@ int main(int argc, char * argv[])
         ox = x;
         oy = y;
     }
-    printf("%s\t%d\t%0.20f\n", argv[0], LIMIT, pi);
+    printf("%s@%d\t%0.20f\n", argv[0], LIMIT, pi);
 }
