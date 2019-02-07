@@ -16,7 +16,7 @@ bool isPrime(int n)
     return true;
 }
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
     int c = 0;
 

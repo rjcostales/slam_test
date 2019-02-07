@@ -48,7 +48,7 @@ C
 C     o	Final measurements are to be made with all
 C	WRITE statements and FORMAT sttements removed.
 C
-C**********************************************************************   
+C**********************************************************************
 */
 
 /* standard C library headers required */
@@ -114,36 +114,36 @@ int main(int argc, char *argv[])
         II++;
     }
 
-  LCONT:
-/*
-C
-C	Start benchmark timing at this point.
-C
-*/
+LCONT:
+    /*
+    C
+    C	Start benchmark timing at this point.
+    C
+    */
     startsec = time(0);
 
-/*
-C
-C	The actual benchmark starts here.
-C
-*/
+    /*
+    C
+    C	The actual benchmark starts here.
+    C
+    */
     T = .499975;
     T1 = 0.50025;
     T2 = 2.0;
-/*
-C
-C	With loopcount LOOP=10, one million Whetstone instructions
-C	will be executed in EACH MAJOR LOOP..A MAJOR LOOP IS EXECUTED
-C	'II' TIMES TO INCREASE WALL-CLOCK TIMING ACCURACY.
-C
-	LOOP = 1000;
-*/
+    /*
+    C
+    C	With loopcount LOOP=10, one million Whetstone instructions
+    C	will be executed in EACH MAJOR LOOP..A MAJOR LOOP IS EXECUTED
+    C	'II' TIMES TO INCREASE WALL-CLOCK TIMING ACCURACY.
+    C
+    	LOOP = 1000;
+    */
     LOOP = loopstart;
     II = 1;
 
     JJ = 1;
 
-  IILOOP:
+IILOOP:
     N1 = 0;
     N2 = 12 * LOOP;
     N3 = 14 * LOOP;
@@ -154,11 +154,11 @@ C
     N9 = 616 * LOOP;
     N10 = 0;
     N11 = 93 * LOOP;
-/*
-C
-C	Module 1: Simple identifiers
-C
-*/
+    /*
+    C
+    C	Module 1: Simple identifiers
+    C
+    */
     X1 = 1.0;
     X2 = -1.0;
     X3 = -1.0;
@@ -174,11 +174,11 @@ C
     IF(JJ == II) POUT(N1, N1, N1, X1, X2, X3, X4);
 #endif
 
-/*
-C
-C	Module 2: Array elements
-C
-*/
+    /*
+    C
+    C	Module 2: Array elements
+    C
+    */
     E1[1] = 1.0;
     E1[2] = -1.0;
     E1[3] = -1.0;
@@ -195,11 +195,11 @@ C
     IF(JJ == II) POUT(N2, N3, N2, E1[1], E1[2], E1[3], E1[4]);
 #endif
 
-/*
-C
-C	Module 3: Array as parameter
-C
-*/
+    /*
+    C
+    C	Module 3: Array as parameter
+    C
+    */
     for (I = 1; I <= N3; I++)
         PA(E1);
 
@@ -207,11 +207,11 @@ C
     IF(JJ == II) POUT(N3, N2, N2, E1[1], E1[2], E1[3], E1[4]);
 #endif
 
-/*
-C
-C	Module 4: Conditional jumps
-C
-*/
+    /*
+    C
+    C	Module 4: Conditional jumps
+    C
+    */
     J = 1;
     for (I = 1; I <= N4; I++) {
         if (J == 1)
@@ -234,12 +234,12 @@ C
     IF(JJ == II) POUT(N4, J, J, X1, X2, X3, X4);
 #endif
 
-/*
-C
-C	Module 5: Omitted
-C 	Module 6: Integer arithmetic
-C
-*/
+    /*
+    C
+    C	Module 5: Omitted
+    C 	Module 6: Integer arithmetic
+    C
+    */
 
     J = 1;
     K = 2;
@@ -257,11 +257,11 @@ C
     IF(JJ == II) POUT(N6, J, K, E1[1], E1[2], E1[3], E1[4]);
 #endif
 
-/*
-C
-C	Module 7: Trigonometric functions
-C
-*/
+    /*
+    C
+    C	Module 7: Trigonometric functions
+    C
+    */
     X = 0.5;
     Y = 0.5;
 
@@ -276,11 +276,11 @@ C
     IF(JJ == II) POUT(N7, J, K, X, X, Y, Y);
 #endif
 
-/*
-C
-C	Module 8: Procedure calls
-C
-*/
+    /*
+    C
+    C	Module 8: Procedure calls
+    C
+    */
     X = 1.0;
     Y = 1.0;
     Z = 1.0;
@@ -292,11 +292,11 @@ C
     IF(JJ == II) POUT(N8, J, K, X, Y, Z, Z);
 #endif
 
-/*
-C
-C	Module 9: Array references
-C
-*/
+    /*
+    C
+    C	Module 9: Array references
+    C
+    */
     J = 1;
     K = 2;
     L = 3;
@@ -311,11 +311,11 @@ C
     IF(JJ == II) POUT(N9, J, K, E1[1], E1[2], E1[3], E1[4]);
 #endif
 
-/*
-C
-C	Module 10: Integer arithmetic
-C
-*/
+    /*
+    C
+    C	Module 10: Integer arithmetic
+    C
+    */
     J = 2;
     K = 3;
 
@@ -330,11 +330,11 @@ C
     IF(JJ == II) POUT(N10, J, K, X1, X2, X3, X4);
 #endif
 
-/*
-C
-C	Module 11: Standard functions
-C
-*/
+    /*
+    C
+    C	Module 11: Standard functions
+    C
+    */
     X = 0.75;
 
     for (I = 1; I <= N11; I++)
@@ -344,30 +344,30 @@ C
     IF(JJ == II) POUT(N11, J, K, X, X, X, X);
 #endif
 
-/*
-C
-C      THIS IS THE END OF THE MAJOR LOOP.
-C
-*/
+    /*
+    C
+    C      THIS IS THE END OF THE MAJOR LOOP.
+    C
+    */
     if (++JJ <= II)
         goto IILOOP;
 
-/*
-C
-C      Stop benchmark timing at this point.
-C
-*/
+    /*
+    C
+    C      Stop benchmark timing at this point.
+    C
+    */
     finisec = time(0);
 
-/*
-C----------------------------------------------------------------
-C      Performance in Whetstone KIP's per second is given by
-C
-C	(100*LOOP*II)/TIME
-C
-C      where TIME is in seconds.
-C--------------------------------------------------------------------
-*/
+    /*
+    C----------------------------------------------------------------
+    C      Performance in Whetstone KIP's per second is given by
+    C
+    C	(100*LOOP*II)/TIME
+    C
+    C      where TIME is in seconds.
+    C--------------------------------------------------------------------
+    */
     printf("\n");
     if (finisec - startsec <= 0) {
         printf("Insufficient duration- Increase the LOOP count\n");
@@ -395,7 +395,7 @@ void PA(double E[])
 {
     J = 0;
 
-  L10:
+L10:
     E[1] = (E[1] + E[2] + E[3] - E[4]) * T;
     E[2] = (E[1] + E[2] - E[3] + E[4]) * T;
     E[3] = (E[1] - E[2] + E[3] + E[4]) * T;

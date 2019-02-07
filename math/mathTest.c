@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "math.h"
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
     printf("factorial %d\n", factorial(10));
     printf("fibonacci %d\n", fibonacci(10));

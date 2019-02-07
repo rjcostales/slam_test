@@ -20,14 +20,14 @@ void primeFactors(int n)
         }
     }
 
-    // This condition is to handle the case when n is a prime number greater than 2
+    // This condition handles the case when n is a prime number greater than 2
     if (n > 2)
         printf("%d ", n);
 
     printf("\n");
 }
 
-int main(int argc, char ** argv)
+int main(int argc, char **argv)
 {
     int n = atoi(argv[1]);
 

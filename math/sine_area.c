@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <math.h>
 
-#define LIMIT 10000000
+#define LIMIT 1000000
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
     double area  = 0.0;
     double delta = M_PI / LIMIT;

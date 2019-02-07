@@ -11,7 +11,7 @@ int rand()
     return seed;
 }
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
     for (int i = 0; i < 25; i++) {
         printf("%08X\n", rand());
