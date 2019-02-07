@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
+#define LIMIT 500000000
+
 int main(int argc, char * argv[])
 {
     double pi, ox, oy;
@@ -9,8 +11,8 @@ int main(int argc, char * argv[])
     ox = -1.0;
     oy = 0.0;
 
-    for (int i = -199999; i <= 200000; i++) {
-        double x = i / (double) 200000;
+    for (int i = -(LIMIT - 1); i <= LIMIT; i++) {
+        double x = i / (double) LIMIT;
         double y = sqrt(1.0 - x * x);
 
         double dx = ox - x;

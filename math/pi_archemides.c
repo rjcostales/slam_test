@@ -3,6 +3,8 @@
 #include <time.h>
 #include <math.h>
 
+#define LIMIT 500
+
 int main(int argc, char * argv[])
 {
     double s = 1.0;
@@ -12,7 +14,7 @@ int main(int argc, char * argv[])
     double a  = sqrt(1.0 - s2 * s2);
     double b  = 1 - a;
 
-    for (int i = 0; i < 64; i++) {
+    for (int i = 0; i < LIMIT; i++) {
         s  = sqrt(s2 * s2 + b * b);
         n  = n * 2;
         s2 = s / 2.0;
