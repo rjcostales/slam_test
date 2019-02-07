@@ -36,6 +36,6 @@ generate 45000 > data.txt
 time merge < data.txt > /dev/null
 echo "45K"
 
-generate 50000 > data.txt
+generate 49999 > data.txt
 time merge < data.txt > /dev/null
 echo "50K"

@@ -40,23 +40,24 @@ void merge(str array[], str left[], str right[], int size_l, int size_r)
 
 void merge_sort(str array[], int size)
 {
-    int i, j;
-    i = j = 0;
-
     if (size > 1) {
-        i = size / 2;
-        j = size - i;
+
+        int i = size / 2;
+        int j = size - i;
 
         str left[i];
         str right[j];
 
-        for (int n = 0; n < i; n++)
-            left[n] = array[n];
-        merge_sort(left, i);
+        memcpy(left, array, i * sizeof(str));
+        memcpy(right, array + i, j * sizeof(str));
 
-        str *tmp= &array[i];
-        for (int n = 0; n < j; n++)
-            right[n] = tmp[n];
+        // for (int n = 0; n < i; n++)
+        //     left[n] = array[n];
+        // str *tmp= &array[i];
+        // for (int n = 0; n < j; n++)
+        //     right[n] = tmp[n];
+        
+        merge_sort(left, i);
         merge_sort(right, j);
 
         merge(array, left, right, i, j);
