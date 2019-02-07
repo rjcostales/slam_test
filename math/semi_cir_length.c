@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define LIMIT 500000000
+#define LIMIT 250000000
 
 int main(int argc, char * argv[])
 {
