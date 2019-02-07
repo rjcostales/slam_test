@@ -1,5 +1,5 @@
-time ./fib0 40
-time ./fib1 40
-time ./fib2 40
-time ./fib3 40
-time ./fib4 40
+time ./fibonacci0 40
+time ./fibonacci1 40
+time ./fibonacci2 40
+time ./fibonacci3 40
+time ./fibonacci4 40
