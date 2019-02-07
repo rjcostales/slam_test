@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define LIMIT 250000000
+#define LIMIT 2500000
 
 int main(int argc, char * argv[])
 {
@@ -23,5 +23,5 @@ int main(int argc, char * argv[])
         ox = x;
         oy = y;
     }
-    printf("%s\t%0.20f\n", argv[0], pi);
+    printf("%s\t%d\t%0.20f\n", argv[0], LIMIT, pi);
 }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#define LIMIT 1000000000
+#define LIMIT 10000000
 
 int main(int argc, char * argv[])
 {
@@ -14,5 +14,5 @@ int main(int argc, char * argv[])
 
         area += y * delta;
     }
-    printf("%s\t%0.20f\n", argv[0], area);
+    printf("%s\t%d\t%0.20f\n",argv[0], LIMIT, area);
 }

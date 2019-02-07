@@ -22,7 +22,7 @@ int main(int argc, char * argv[])
         b  = 1 - a;
     }
 
-    printf("%s\t%0.20lf\n", argv[0], s * n);
+    printf("%s\t%d\t%0.20lf\n", argv[0], LIMIT, s * n);
     printf("s = %0.20lf\n", s);
     printf("n = %0.0lf\n", n);
 }
