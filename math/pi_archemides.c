@@ -4,7 +4,7 @@
 #include <math.h>
 
 #define LIMIT 100
-#define LOOP  10000
+#define LOOP  1000000
 
 #define square(x) (x*(x))
 
@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
         s = 1.0;
         n = 3.0;
-    
+
         for (int i = 0; i < LIMIT; i++) {
 
             double s2 = s / 2.0;
