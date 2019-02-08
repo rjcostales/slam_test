@@ -2,19 +2,14 @@
 #include <stdlib.h>
 #include <math.h>
 
-//#define REAL float
-#define REAL double
+#define square(x) (x*(x))
 
-inline static REAL sqr(REAL x) {
-    return x*x;
-}
-
-int linreg(int n, const REAL x[], const REAL y[], REAL* m, REAL* b, REAL* r){
-    REAL sumx = 0.0;   /* sum of x     */
-    REAL sumx2 = 0.0;  /* sum of x**2  */
-    REAL sumxy = 0.0;  /* sum of x * y */
-    REAL sumy = 0.0;   /* sum of y     */
-    REAL sumy2 = 0.0;  /* sum of y**2  */
+int linreg(int n, const float x[], const float y[], float* m, float* b, float* r){
+    float sumx  = 0.0;   /* sum of x     */
+    float sumx2 = 0.0;  /* sum of x**2  */
+    float sumxy = 0.0;  /* sum of x * y */
+    float sumy  = 0.0;   /* sum of y     */
+    float sumy2 = 0.0;  /* sum of y**2  */
 
     for (int i=0; i<n; i++) {
         sumx  += x[i];
@@ -24,7 +19,7 @@ int linreg(int n, const REAL x[], const REAL y[], REAL* m, REAL* b, REAL* r){
         sumy2 += sqr(y[i]);
     }
 
-    REAL denom = (n * sumx2 - sqr(sumx));
+    float denom = (n * sumx2 - sqr(sumx));
     if (denom == 0) {
         // singular matrix. can't solve the problem.
         *m = 0;
@@ -35,10 +30,10 @@ int linreg(int n, const REAL x[], const REAL y[], REAL* m, REAL* b, REAL* r){
 
     *m = (n * sumxy  -  sumx * sumy) / denom;
     *b = (sumy * sumx2  -  sumx * sumxy) / denom;
-    if (r!=NULL) {
+    if (r != NULL) {
         *r = (sumxy - sumx * sumy / n) /
-             sqrt((sumx2 - sqr(sumx)/n) *
-                  (sumy2 - sqr(sumy)/n));
+             sqrt((sumx2 - square(sumx)/n) *
+                  (sumy2 - square(sumy)/n));
     }
 
     return 0;
@@ -47,10 +42,10 @@ int linreg(int n, const REAL x[], const REAL y[], REAL* m, REAL* b, REAL* r){
 int main()
 {
     int n = 6;
-    REAL x[6]= {1, 2, 4,  5,  10, 20};
-    REAL y[6]= {4, 6, 12, 15, 34, 68};
+    float x[6]= {1, 2, 4,  5,  10, 20};
+    float y[6]= {4, 6, 12, 15, 34, 68};
 
-    REAL m,b,r;
+    float m,b,r;
     linreg(n,x,y,&m,&b,&r);
 
     printf("m=%g b=%g r=%g\n",m,b,r);
