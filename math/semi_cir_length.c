@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <math.h>
 
-#define LIMIT 50000000
+#define LIMIT 5000000
 
-#define square(x) (x*(x))
+#define square(x)     (x*(x))
+#define distance(x,y) sqrt((x*(x))+(y*(y)))
 
 int main(int argc, char *argv[])
 {
@@ -19,7 +20,7 @@ int main(int argc, char *argv[])
         double dx = ox - x;
         double dy = oy - y;
 
-        pi += sqrt(square(dx) + square(dy));
+        pi += distance(dx, dy);
 
         ox = x;
         oy = y;

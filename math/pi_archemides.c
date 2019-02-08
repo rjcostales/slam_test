@@ -4,7 +4,7 @@
 #include <math.h>
 
 #define LIMIT 100
-#define LOOP  1000000
+#define LOOP  100000
 
 #define square(x) (x*(x))
 
