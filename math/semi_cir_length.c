@@ -20,9 +20,10 @@ int main(int argc, char *argv[])
         double dy = oy - y;
 
         pi += sqrt(square(dx) + square(dy));
-        
+
         ox = x;
         oy = y;
     }
+
     printf("%s@%d\t%0.20f\n", argv[0], LIMIT, pi);
 }

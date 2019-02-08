@@ -15,5 +15,6 @@ int main(int argc, char *argv[])
 
         area += y * delta;
     }
+
     printf("%s@%d\t%0.20f\n", argv[0], LIMIT, area);
 }
