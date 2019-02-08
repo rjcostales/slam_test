@@ -3,32 +3,32 @@
 #include <time.h>
 #include <math.h>
 
-#define LIMIT 500
-#define LOOP  500
+#define LIMIT 100
+#define LOOP  10000
+
+#define square(x) (x*(x))
 
 int main(int argc, char *argv[])
 {
-    double s = 1.0;
-    double n = 3.0;
+    double s, n;
 
     for(int i = 0; i < LOOP; i++) {
-        s=1.0;
-        n=3.0;
-        double s2 = s / 2.0;
-        double a  = sqrt(1.0 - s2 * s2);
-        double b  = 1 - a;
 
+        s = 1.0;
+        n = 3.0;
+    
         for (int i = 0; i < LIMIT; i++) {
 
-            s  = sqrt(pow(s2, (double) 2) + pow(b, (double) 2));
+            double s2 = s / 2.0;
+            double a  = sqrt(1.0 - square(s2));
+            double b  = 1 - a;
+
+            s  = sqrt(square(s2) + square(b));
             n  = n * 2;
-            s2 = s / 2.0;
-            a  = sqrt(1.0 - pow(s2, (double) 2));
-            b  = (double) 1 - a;
         }
     }
 
-    printf("%s@%d %d times\t%0.20lf\n", argv[0], LIMIT, LOOP, s * n);
-    printf("s = %0.20lf\n", s);
+    printf("%s@%drx%d\t%0.20lf\n", argv[0], LIMIT, LOOP, s * n);
+    printf("s = %e\n", s);
     printf("n = %0.0lf\n", n);
 }
