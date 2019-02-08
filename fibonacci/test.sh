@@ -1,3 +1,4 @@
+clear
 time ./fibonacci0 40
 time ./fibonacci1 40
 time ./fibonacci2 40
