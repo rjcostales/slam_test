@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     clock_t start, end;
 
     setlocale(LC_NUMERIC, "");
-    printf("%s\t%'d\t%'d\n", argv[0], LOOPS, COUNT);
+    printf("%s\t%'d\t%'dx%'d\n", argv[0], LOOPS, COUNT, COUNT);
 
     for (int i = 0; i < COUNT; i++)
         reals[i] = (float) rand() / (float) rand();
