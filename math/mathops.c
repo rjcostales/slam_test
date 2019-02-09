@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <locale.h>
 
-#define LOOPS 1000000
-#define COUNT 100
+#define LOOPS 10000
+#define COUNT 10000
 
 typedef double real;
 

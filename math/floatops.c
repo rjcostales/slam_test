@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <locale.h>
 
-#define LOOPS 100000
+#define LOOPS 10000
 #define COUNT 100
 
 typedef double real;
@@ -12,7 +12,7 @@ typedef double real;
 int main(int argc, char *argv[])
 {
     real reals[COUNT];
-    real add, sub, multiply, divide;
+    real add, sub, mul, div;
     clock_t start, end;
 
     setlocale(LC_NUMERIC, "");
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
     for (int t = 0; t < LOOPS; t++)
         for (int i = 0; i < COUNT; i++)
             for (int j = 0; j < COUNT; j++)
-                multiply = reals[i] * reals[j];
+                mul = reals[i] * reals[j];
     end = clock();
     printf("mul %0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
 
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     for (int t = 0; t < LOOPS; t++)
         for (int i = 0; i < COUNT; i++)
             for (int j = 0; j < COUNT; j++)
-                divide = reals[i] / reals[j];
+                div = reals[i] / reals[j];
     end = clock();
     printf("div %0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
 
