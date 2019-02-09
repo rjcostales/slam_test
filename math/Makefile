@@ -39,7 +39,7 @@ randgen: randgen.c
 	$(CC) $(CFLAGS) randgen.c -o randgen
 
 dhrystone: dhrystone.c
-	$(CC) $(CFLAGS) dhrystone.c -o dhrystone
+	$(CC) dhrystone.c -o dhrystone
 
 whetstone: whetstone.c
 	$(CC) whetstone.c -o whetstone $(LFLAGS)
