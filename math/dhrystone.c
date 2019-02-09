@@ -496,7 +496,6 @@ void Proc0()
     OneToFifty IntLoc1;
     REG OneToFifty IntLoc2;
     OneToFifty IntLoc3;
-    REG char CharLoc;
     REG char CharIndex;
     Enumeration EnumLoc;
     String30 String1Loc;

@@ -6,11 +6,10 @@
 #define NDX 99
 #define LEN 25
 
-
 int main(int argc, char *argv[])
 {
     const char characters[] =
-        "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzrj";
+        "0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz";
     char buffer[BUF] = { '\0' };
     int seed = 1234567890;
     int n = LEN;
@@ -22,7 +21,7 @@ int main(int argc, char *argv[])
     }
 
     srand(seed);
-    
+
     for (int i = 0; i < n; i++) {
         char *ptr = &buffer[0];
         for (int n = 0; n < 20; n++) {
