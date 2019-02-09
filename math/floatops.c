@@ -2,15 +2,19 @@
 #include <time.h>
 #include <math.h>
 #include <stdlib.h>
+#include <locale.h>
 
-#define LOOPS 1000000
+#define LOOPS 100000
 #define COUNT 100
 
-int main(void)
+int main(int argc, char *argv[])
 {
     double doubles[COUNT];
     double add, sub, multiply, divide;
     clock_t start, end;
+
+    setlocale(LC_NUMERIC, "");
+    printf("%s\t%'d\t%'d\n", argv[0], LOOPS, COUNT);
 
     for (int i = 0; i < COUNT; i++)
         doubles[i] = (float) rand() / (float) rand();
@@ -39,7 +43,7 @@ int main(void)
             for (int j = 0; j < COUNT; j++)
                 multiply = doubles[i] * doubles[j];
     end = clock();
-    printf("multiply %0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
+    printf("mul %0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
     for (int t = 0; t < LOOPS; t++)
@@ -47,6 +51,6 @@ int main(void)
             for (int j = 0; j < COUNT; j++)
                 divide = doubles[i] / doubles[j];
     end = clock();
-    printf("divide %0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
+    printf("div %0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
 
 } /* main */
