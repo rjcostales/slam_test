@@ -6,11 +6,13 @@
 #define LIMIT 100
 #define LOOP  100000
 
+typedef double real;
+
 #define square(x) (x*(x))
 
 int main(int argc, char *argv[])
 {
-    double s, n;
+    real s, n;
     clock_t start, end;
 
     start = clock();
@@ -21,9 +23,9 @@ int main(int argc, char *argv[])
 
         for (int i = 0; i < LIMIT; i++) {
 
-            double s2 = s / 2.0;
-            double a  = sqrt(1.0 - square(s2));
-            double b  = 1 - a;
+            real s2 = s / 2.0;
+            real a  = sqrt(1.0 - square(s2));
+            real b  = 1 - a;
 
             s  = sqrt(square(s2) + square(b));
             n  = n * 2;

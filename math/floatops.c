@@ -7,25 +7,27 @@
 #define LOOPS 100000
 #define COUNT 100
 
+typedef double real;
+
 int main(int argc, char *argv[])
 {
-    double doubles[COUNT];
-    double add, sub, multiply, divide;
+    real reals[COUNT];
+    real add, sub, multiply, divide;
     clock_t start, end;
 
     setlocale(LC_NUMERIC, "");
     printf("%s\t%'d\t%'d\n", argv[0], LOOPS, COUNT);
 
     for (int i = 0; i < COUNT; i++)
-        doubles[i] = (float) rand() / (float) rand();
+        reals[i] = (float) rand() / (float) rand();
     // for (int i = 0; i < COUNT; i++)
-    //     printf("%g\n", doubles[i]);
+    //     printf("%g\n", reals[i]);
 
     start = clock();
     for (int t = 0; t < LOOPS; t++)
         for (int i = 0; i < COUNT; i++)
             for (int j = 0; j < COUNT; j++)
-                add = doubles[i] + doubles[j];
+                add = reals[i] + reals[j];
     end = clock();
     printf("add %0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
 
@@ -33,7 +35,7 @@ int main(int argc, char *argv[])
     for (int t = 0; t < LOOPS; t++)
         for (int i = 0; i < COUNT; i++)
             for (int j = 0; j < COUNT; j++)
-                sub = doubles[i] - doubles[j];
+                sub = reals[i] - reals[j];
     end = clock();
     printf("sub %0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
 
@@ -41,7 +43,7 @@ int main(int argc, char *argv[])
     for (int t = 0; t < LOOPS; t++)
         for (int i = 0; i < COUNT; i++)
             for (int j = 0; j < COUNT; j++)
-                multiply = doubles[i] * doubles[j];
+                multiply = reals[i] * reals[j];
     end = clock();
     printf("mul %0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
 
@@ -49,7 +51,7 @@ int main(int argc, char *argv[])
     for (int t = 0; t < LOOPS; t++)
         for (int i = 0; i < COUNT; i++)
             for (int j = 0; j < COUNT; j++)
-                divide = doubles[i] / doubles[j];
+                divide = reals[i] / reals[j];
     end = clock();
     printf("div %0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
 
