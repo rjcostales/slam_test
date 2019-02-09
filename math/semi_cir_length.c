@@ -8,9 +8,9 @@
 
 int main(int argc, char *argv[])
 {
-    double pi = 0.0;
+    double pi =  0.0;
     double ox = -1.0;
-    double oy = 0.0;
+    double oy =  0.0;
 
     for (int i = -(LIMIT - 1); i <= LIMIT; i++) {
 
