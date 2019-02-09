@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+#include <locale.h>
 
 #define MAXLINE 1024
 #define MAXSIZE 50000
@@ -56,7 +58,7 @@ void merge_sort(str array[], int size)
         // str *tmp= &array[i];
         // for (int n = 0; n < j; n++)
         //     right[n] = tmp[n];
-        
+
         merge_sort(left, i);
         merge_sort(right, j);
 
@@ -74,8 +76,15 @@ int main(int argc, char *argv[])
 {
     str page[MAXSIZE];
     int size = read(page);
+    fprintf(stderr, "%s %d records\n", argv[0], size);
 
+    clock_t start, end;
+    start = clock();
     merge_sort(page, size);
+    end = clock();
+    setlocale(LC_NUMERIC, "");
+    fprintf(stderr, "execution time: %0.6f secs.\n",
+           (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     print(page);
 
