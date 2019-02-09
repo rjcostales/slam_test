@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include <math.h>
+#include <time.h>
 
 #define LIMIT 100
 #define LOOP  100000
@@ -11,7 +11,9 @@
 int main(int argc, char *argv[])
 {
     double s, n;
+    clock_t start, end;
 
+    start = clock();
     for(int i = 0; i < LOOP; i++) {
 
         s = 1.0;
@@ -27,8 +29,10 @@ int main(int argc, char *argv[])
             n  = n * 2;
         }
     }
+    end = clock();
 
     printf("%s@%drx%d\t%0.20lf\n", argv[0], LIMIT, LOOP, s * n);
     printf("s = %e\n", s);
     printf("n = %0.0lf\n", n);
+    printf("execution time: %0.6f secs.\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
 }
