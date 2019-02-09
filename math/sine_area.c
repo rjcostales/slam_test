@@ -1,8 +1,9 @@
 #include <stdio.h>
-#include <math.h>
 #include <time.h>
+#include <math.h>
 
 #define LIMIT 10000000
+#define M_PI  3.14159265358979323846
 
 typedef double real;
 
@@ -23,5 +24,6 @@ int main(int argc, char *argv[])
     end = clock();
 
     printf("%s@%d\t%0.20f\n", argv[0], LIMIT, area);
-    printf("execution time: %0.6f secs.\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
+    printf("execution time: %0.6f secs.\n",
+           (float) (end - start) / (float) CLOCKS_PER_SEC);
 }

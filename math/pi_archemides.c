@@ -36,5 +36,6 @@ int main(int argc, char *argv[])
     printf("%s@%drx%d\t%0.20lf\n", argv[0], LIMIT, LOOP, s * n);
     printf("s = %e\n", s);
     printf("n = %0.0lf\n", n);
-    printf("execution time: %0.6f secs.\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
+    printf("execution time: %0.6f secs.\n",
+           (float) (end - start) / (float) CLOCKS_PER_SEC);
 }

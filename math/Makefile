@@ -1,5 +1,5 @@
 CC     = clang
-CFLAGS = -Ofast
+CFLAGS = -Ofast -Wall -std=c99
 LFLAGS = -lm
 
 TARGETS = floatops mathops math.o mathTest factorize sine_area pi_archemides semi_cir_length primes randgen dhrystone whetstone a.out

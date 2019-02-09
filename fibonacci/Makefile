@@ -1,5 +1,5 @@
 CC     = clang
-CFLAGS = -Ofast -Wall
+CFLAGS = -Ofast -Wall -std=c99
 
 TARGETS = fibonacci0 fibonacci1 fibonacci2 fibonacci3 fibonacci4 fibonacciT
 SOURCES = *.c

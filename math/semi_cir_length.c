@@ -33,5 +33,6 @@ int main(int argc, char *argv[])
     end = clock();
 
     printf("%s@%d\t%0.20f\n", argv[0], LIMIT, pi);
-    printf("execution time: %0.6f secs.\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
+    printf("execution time: %0.6f secs.\n",
+           (float) (end - start) / (float) CLOCKS_PER_SEC);
 }
