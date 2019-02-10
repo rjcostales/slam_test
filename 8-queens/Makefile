@@ -1,5 +1,5 @@
 CC     = clang
-CFLAGS = -O3 -Wall
+CFLAGS = -Ofast -Wall -std=c99
 LFLAGS = -lm
 
 TARGETS = backtrack bruteforce permutation random count generate

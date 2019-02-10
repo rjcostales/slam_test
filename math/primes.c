@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-
 bool isPrime(int n)
 {
     if ((n % 2) == 0) {
@@ -16,7 +15,7 @@ bool isPrime(int n)
     return true;
 }
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
     int c = 0;
 

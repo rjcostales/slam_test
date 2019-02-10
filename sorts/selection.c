@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+#include <locale.h>
 
 #define MAXLINE 1024
 #define MAXSIZE 50000
@@ -29,8 +31,11 @@ int main(int argc, char *argv[])
 {
     str  tmp, page[MAXSIZE];
     int  min, size = read(page);
+    fprintf(stderr, "%s %d records\n", argv[0], size);
 
     // selection sort
+    clock_t start, end;
+    start = clock();
     for (int i = 0; i < size; i++) {
 
         min = i;
@@ -43,6 +48,10 @@ int main(int argc, char *argv[])
         page[i] = page[min];
         page[min] = tmp;
     }
+    end = clock();
+    setlocale(LC_NUMERIC, "");
+    fprintf(stderr, "execution time: %0.6f secs.\n",
+           (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     print(page);
 

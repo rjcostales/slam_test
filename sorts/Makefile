@@ -1,5 +1,5 @@
 CC     = clang
-CFLAGS = -Ofast -Wall
+CFLAGS = -Ofast -Wall -std=c99
 
 TARGETS = bubble insertion selection merge quicksort generate
 SOURCES = *.c

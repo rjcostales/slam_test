@@ -496,7 +496,6 @@ void Proc0()
     OneToFifty IntLoc1;
     REG OneToFifty IntLoc2;
     OneToFifty IntLoc3;
-    REG char CharLoc;
     REG char CharIndex;
     Enumeration EnumLoc;
     String30 String1Loc;
@@ -538,11 +537,11 @@ void Proc0()
     strcpy(String1Loc, "DHRYSTONE PROGRAM, 1'ST STRING");
     /*GOOF*/
 #endif
-        Array2Glob[8][7] = 10;  /* Was missing in published program */
+    Array2Glob[8][7] = 10;  /* Was missing in published program */
 
-/*****************
--- Start Timer --
-*****************/
+    /*****************
+    -- Start Timer --
+    *****************/
 #ifdef TIME
     starttime = time((long *) 0);
 #endif
@@ -575,9 +574,9 @@ void Proc0()
         Proc2(&IntLoc1);
     }
 
-/*****************
--- Stop Timer --
-*****************/
+    /*****************
+    -- Stop Timer --
+    *****************/
 
 #ifdef TIME
     benchtime = time((long *) 0) - starttime - nulltime;

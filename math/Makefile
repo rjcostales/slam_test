@@ -1,12 +1,18 @@
 CC     = clang
-CFLAGS = -Ofast
+CFLAGS = -Ofast -Wall -std=c99
 LFLAGS = -lm
 
-TARGETS = math.o mathTest factorize sine_area pi_archemides semi_cir_length primes randgen dhrystone whetstone a.out
+TARGETS = floatops mathops math.o mathTest factorize sine_area pi_archemides semi_cir_length primes randgen dhrystone whetstone a.out
 SOURCES = *.c
 HEADERS = *.h
 
-all: math mathTest factorize primes randgen sine_area pi_archemides semi_cir_length dhrystone whetstone
+all: floatops mathops math mathTest factorize primes randgen sine_area pi_archemides semi_cir_length dhrystone whetstone
+
+floatops: floatops.c
+	$(CC) floatops.c -o floatops
+
+mathops: mathops.c
+	$(CC) mathops.c -o mathops $(LFLAGS)
 
 math: math.c
 	$(CC) $(CFLAGS) -c math.c -o math.o
@@ -33,7 +39,7 @@ randgen: randgen.c
 	$(CC) $(CFLAGS) randgen.c -o randgen
 
 dhrystone: dhrystone.c
-	$(CC) $(CFLAGS) dhrystone.c -o dhrystone
+	$(CC) dhrystone.c -o dhrystone
 
 whetstone: whetstone.c
 	$(CC) whetstone.c -o whetstone $(LFLAGS)

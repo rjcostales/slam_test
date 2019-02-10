@@ -1,26 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include <math.h>
+#include <time.h>
 
-int main(int argc, char * argv[])
+#define LIMIT 100
+#define LOOP  100000
+
+typedef double real;
+
+#define square(x) (x*(x))
+
+int main(int argc, char *argv[])
 {
-    double s = 1.0;
-    double n = 3.0;
+    real s, n;
+    clock_t start, end;
 
-    double s2 = s / 2.0;
-    double a  = sqrt(1.0 - s2 * s2);
-    double b  = 1 - a;
+    start = clock();
+    for(int i = 0; i < LOOP; i++) {
 
-    for (int i = 0; i < 64; i++) {
-        s  = sqrt(s2 * s2 + b * b);
-        n  = n * 2;
-        s2 = s / 2.0;
-        a  = sqrt(1.0 - s2 * s2);
-        b  = 1 - a;
+        s = 1.0;
+        n = 3.0;
+
+        for (int i = 0; i < LIMIT; i++) {
+
+            real s2 = s / 2.0;
+            real a  = sqrt(1.0 - square(s2));
+            real b  = 1 - a;
+
+            s  = sqrt(square(s2) + square(b));
+            n  = n * 2;
+        }
     }
+    end = clock();
 
-    printf("%s\t%0.20lf\n", argv[0], s * n);
-    printf("s = %0.20lf\n", s);
+    printf("%s@%drx%d\t%0.20lf\n", argv[0], LIMIT, LOOP, s * n);
+    printf("s = %e\n", s);
     printf("n = %0.0lf\n", n);
+    printf("execution time: %0.6f secs.\n",
+           (float) (end - start) / (float) CLOCKS_PER_SEC);
 }

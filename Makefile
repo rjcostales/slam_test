@@ -1,5 +1,5 @@
 CC     = clang
-CFLAGS = -Ofast -Wall
+CFLAGS = -Ofast -Wall -std=c99
 LFLAGS = -Lm
 
 TARGETS = strfunc.o strtest

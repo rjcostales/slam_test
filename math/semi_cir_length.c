@@ -1,25 +1,38 @@
 #include <stdio.h>
 #include <math.h>
+#include <time.h>
 
-int main(int argc, char * argv[])
+#define LIMIT 5000000
+
+typedef double real;
+
+#define square(x)     (x*(x))
+#define distance(x,y) sqrt((x*(x))+(y*(y)))
+
+int main(int argc, char *argv[])
 {
-    double pi, ox, oy;
+    real pi =  0.0;
+    real ox = -1.0;
+    real oy =  0.0;
+    clock_t start, end;
 
-    pi = 0.0;
-    ox = -1.0;
-    oy = 0.0;
+    start = clock();
+    for (int i = -(LIMIT - 1); i <= LIMIT; i++) {
 
-    for (int i = -199999; i <= 200000; i++) {
-        double x = i / (double) 200000;
-        double y = sqrt(1.0 - x * x);
+        real x = i / (real) LIMIT;
+        real y = sqrt(1.0 - square(x));
 
-        double dx = ox - x;
-        double dy = oy - y;
+        real dx = ox - x;
+        real dy = oy - y;
 
-        pi += sqrt(dx * dx + dy * dy);
-        // printf("%f\t%f\n", dx, dy);
+        pi += distance(dx, dy);
+
         ox = x;
         oy = y;
     }
-    printf("%s\t%0.20f\n", argv[0], pi);
+    end = clock();
+
+    printf("%s@%d\t%0.20f\n", argv[0], LIMIT, pi);
+    printf("execution time: %0.6f secs.\n",
+           (float) (end - start) / (float) CLOCKS_PER_SEC);
 }
