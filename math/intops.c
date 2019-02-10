@@ -4,8 +4,8 @@
 #include <time.h>
 #include <locale.h>
 
-#define LOOPS 10000
-#define COUNT 100
+#define LOOP 100
+#define COUNT 1000
 
 int main(int argc, char *argv[])
 {
@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
     setlocale(LC_NUMERIC, "");
 
-    fprintf(stderr, "%s\t%'d - %'dx%'d\n", argv[0], LOOPS, COUNT, COUNT);
+    fprintf(stderr, "%s\t%'d - %'dx%'d\n", argv[0], LOOP, COUNT, COUNT);
 
     for (int i = 0; i < COUNT; i++)
         integers[i] = rand();
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     //     printf("%g\n", integers[i]);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             for (int j = 0; j < COUNT; j++)
                 result = integers[j];
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             for (int j = 0; j < COUNT; j++)
                 result = integers[i] + integers[j];
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             for (int j = 0; j < COUNT; j++)
                 result = integers[i] - integers[j];
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             for (int j = 0; j < COUNT; j++)
                 result = integers[i] * integers[j];
@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             for (int j = 0; j < COUNT; j++)
                 result = integers[i] / integers[j];
@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             for (int j = 0; j < COUNT; j++)
                 result = integers[i] % integers[j];
@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             for (int j = 0; j < COUNT; j++)
                 result = integers[i] & integers[j];
@@ -86,7 +86,7 @@ int main(int argc, char *argv[])
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             for (int j = 0; j < COUNT; j++)
                 result = integers[i] | integers[j];
@@ -95,7 +95,7 @@ int main(int argc, char *argv[])
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             for (int j = 0; j < COUNT; j++)
                 result = integers[i] ^ integers[j];

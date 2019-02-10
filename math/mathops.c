@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <locale.h>
 
-#define LOOPS 10000
+#define LOOP 10000
 #define COUNT 10000
 
 typedef double real;
@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
     setlocale(LC_NUMERIC, "");
 
-    fprintf(stderr, "%s\t%'d - %'d\n", argv[0], LOOPS, COUNT);
+    fprintf(stderr, "%s\t%'d - %'d\n", argv[0], LOOP, COUNT);
 
     for (int i = 0; i < COUNT; i++)
         reals[i] = (float) rand() / (float) rand();
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     //     printf("%g\n", reals[i]);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             result = reals[i];
     end = clock();
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             result = sqrt(reals[i]);
     end = clock();
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             result = sin(reals[i]);
     end = clock();
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             result = cos(reals[i]);
     end = clock();
@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             result = tan(reals[i]);
     end = clock();
@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             result = atan(reals[i]);
     end = clock();
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             result = exp(reals[i]);
     end = clock();
@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             result = log(reals[i]);
     end = clock();
@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
-    for (int t = 0; t < LOOPS; t++)
+    for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < COUNT; i++)
             result = log10(reals[i]);
     end = clock();

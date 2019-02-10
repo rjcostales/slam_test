@@ -21,7 +21,7 @@
  *			The time(2) function is library dependant; Most
  *			return the time in seconds, but beware of some, like
  *			Aztec C, which return other units.
- *			The LOOPS define is initially set for 50000 loops.
+ *			The LOOP define is initially set for 50000 loops.
  *			If you have a machine with large integers and is
  *			very fast, please change this number to 500000 to
  *			get better accuracy.  Please select the way to
@@ -383,9 +383,9 @@
  */
 
 /* Accuracy of timings and human fatigue controlled by next two lines */
-//#define LOOPS	5000		/* Use this for slow or 16 bit machines */
-#define LOOPS	50000           /* Use this for slow or 16 bit machines */
-//#define LOOPS	500000		/* Use this for faster machines */
+//#define LOOP	5000		/* Use this for slow or 16 bit machines */
+#define LOOP	50000           /* Use this for slow or 16 bit machines */
+//#define LOOP	500000		/* Use this for faster machines */
 
 /* Compiler dependent options */
 #undef	NOENUM                  /* Define if compiler has no enum's */
@@ -510,7 +510,7 @@ void Proc0()
     long nulltime;
 
     starttime = time((long *) 0);
-    for (i = 0; i < LOOPS; ++i);
+    for (i = 0; i < LOOP; ++i);
     nulltime = time((long *) 0) - starttime;    /* Computes o'head of loop */
 #endif
 #ifdef TIMES
@@ -521,7 +521,7 @@ void Proc0()
 
     times(&tms);
     starttime = tms.tms_utime;
-    for (i = 0; i < LOOPS; ++i);
+    for (i = 0; i < LOOP; ++i);
     times(&tms);
     nulltime = tms.tms_utime - starttime;       /* Computes overhead of looping */
 #endif
@@ -549,7 +549,7 @@ void Proc0()
     times(&tms);
     starttime = tms.tms_utime;
 #endif
-    for (i = 0; i < LOOPS; ++i) {
+    for (i = 0; i < LOOP; ++i) {
 
         Proc5();
         Proc4();
@@ -581,17 +581,17 @@ void Proc0()
 #ifdef TIME
     benchtime = time((long *) 0) - starttime - nulltime;
     printf("Dhrystone(%s) time for %ld passes = %ld\n",
-           Version, (long) LOOPS, benchtime);
+           Version, (long) LOOP, benchtime);
     printf("This machine benchmarks at %ld dhrystones/second\n",
-           ((long) LOOPS) / benchtime);
+           ((long) LOOP) / benchtime);
 #endif
 #ifdef TIMES
     times(&tms);
     benchtime = tms.tms_utime - starttime - nulltime;
     printf("Dhrystone(%s) time for %ld passes = %ld\n",
-           Version, (long) LOOPS, benchtime / HZ);
+           Version, (long) LOOP, benchtime / HZ);
     printf("This machine benchmarks at %ld dhrystones/second\n",
-           ((long) LOOPS) * HZ / benchtime);
+           ((long) LOOP) * HZ / benchtime);
 #endif
 
 }
