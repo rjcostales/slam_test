@@ -4,7 +4,7 @@
 #include <time.h>
 #include <locale.h>
 
-#define LOOPS 1000
+#define LOOPS 100
 #define COUNT 1000
 
 int main(int argc, char *argv[])
