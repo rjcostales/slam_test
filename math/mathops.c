@@ -26,6 +26,13 @@ int main(int argc, char *argv[])
     start = clock();
     for (int t = 0; t < LOOPS; t++)
         for (int i = 0; i < COUNT; i++)
+            result = reals[i];
+    end = clock();
+    printf("nop   %0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
+
+    start = clock();
+    for (int t = 0; t < LOOPS; t++)
+        for (int i = 0; i < COUNT; i++)
             result = sqrt(reals[i]);
     end = clock();
     printf("sqrt  %0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
