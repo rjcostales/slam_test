@@ -1,5 +1,7 @@
+# executables
 floatops
 mathops
+intops
 
 math.o
 mathTest
