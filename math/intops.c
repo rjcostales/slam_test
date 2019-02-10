@@ -4,8 +4,8 @@
 #include <time.h>
 #include <locale.h>
 
-#define LOOPS 10000
-#define COUNT 100
+#define LOOPS 1000
+#define COUNT 1000
 
 int main(int argc, char *argv[])
 {
@@ -66,7 +66,6 @@ int main(int argc, char *argv[])
     fprintf(stderr, "div %0.6f\n",
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
-
     start = clock();
     for (int t = 0; t < LOOPS; t++)
         for (int i = 0; i < COUNT; i++)
@@ -74,5 +73,32 @@ int main(int argc, char *argv[])
                 result = integers[i] % integers[j];
     end = clock();
     fprintf(stderr, "mod %0.6f\n",
+      (float) (end - start) / (float) CLOCKS_PER_SEC);
+
+    start = clock();
+    for (int t = 0; t < LOOPS; t++)
+        for (int i = 0; i < COUNT; i++)
+            for (int j = 0; j < COUNT; j++)
+                result = integers[i] & integers[j];
+    end = clock();
+    fprintf(stderr, "and %0.6f\n",
+      (float) (end - start) / (float) CLOCKS_PER_SEC);
+
+    start = clock();
+    for (int t = 0; t < LOOPS; t++)
+        for (int i = 0; i < COUNT; i++)
+            for (int j = 0; j < COUNT; j++)
+                result = integers[i] | integers[j];
+    end = clock();
+    fprintf(stderr, "or  %0.6f\n",
+      (float) (end - start) / (float) CLOCKS_PER_SEC);
+
+    start = clock();
+    for (int t = 0; t < LOOPS; t++)
+        for (int i = 0; i < COUNT; i++)
+            for (int j = 0; j < COUNT; j++)
+                result = integers[i] ^ integers[j];
+    end = clock();
+    fprintf(stderr, "xor %0.6f\n",
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 } /* main */
