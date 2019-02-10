@@ -16,7 +16,8 @@ int main(int argc, char *argv[])
     clock_t start, end;
 
     setlocale(LC_NUMERIC, "");
-    fprintf(stderr, "%s\t%'d\t%'dx%'d\n", argv[0], LOOPS, COUNT, COUNT);
+
+    fprintf(stderr, "%s\t%'d - %'dx%'d\n", argv[0], LOOPS, COUNT, COUNT);
 
     for (int i = 0; i < COUNT; i++)
         reals[i] = (float) rand() / (float) rand();
@@ -30,7 +31,7 @@ int main(int argc, char *argv[])
                 result = reals[j];
     end = clock();
     fprintf(stderr, "nop %0.6f\n",
-            (float) (end - start) / (float) CLOCKS_PER_SEC);
+      (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
     for (int t = 0; t < LOOPS; t++)
@@ -39,7 +40,7 @@ int main(int argc, char *argv[])
                 result = reals[i] + reals[j];
     end = clock();
     fprintf(stderr, "add %0.6f\n",
-            (float) (end - start) / (float) CLOCKS_PER_SEC);
+      (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
     for (int t = 0; t < LOOPS; t++)
@@ -48,7 +49,7 @@ int main(int argc, char *argv[])
                 result = reals[i] - reals[j];
     end = clock();
     fprintf(stderr, "sub %0.6f\n",
-            (float) (end - start) / (float) CLOCKS_PER_SEC);
+      (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
     for (int t = 0; t < LOOPS; t++)
@@ -57,7 +58,7 @@ int main(int argc, char *argv[])
                 result = reals[i] * reals[j];
     end = clock();
     fprintf(stderr, "mul %0.6f\n",
-            (float) (end - start) / (float) CLOCKS_PER_SEC);
+      (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
     for (int t = 0; t < LOOPS; t++)
@@ -66,7 +67,7 @@ int main(int argc, char *argv[])
                 result = reals[i] / reals[j];
     end = clock();
     fprintf(stderr, "div %0.6f\n",
-            (float) (end - start) / (float) CLOCKS_PER_SEC);
+      (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     fprintf(stderr, "add sub mul div\t%'dx%'dX%'dx%'d\n", COUNT, COUNT, COUNT, COUNT);
     start = clock();
@@ -77,5 +78,5 @@ int main(int argc, char *argv[])
                     result += reals[i] * reals[j] - reals[i] / reals[j];
     end = clock();
     fprintf(stderr, "asmd %0.6f\n",
-        (float) (end - start) / (float) CLOCKS_PER_SEC);
-}
+      (float) (end - start) / (float) CLOCKS_PER_SEC);
+} /* main */

@@ -6,7 +6,7 @@ TARGETS = floatops intops mathops math.o mathTest factorize sine_area pi_archemi
 SOURCES = *.c
 HEADERS = *.h
 
-all: floatops mathops math mathTest factorize primes randgen sine_area pi_archemides semi_cir_length dhrystone whetstone
+all: floatops intops mathops math mathTest factorize primes randgen sine_area pi_archemides semi_cir_length dhrystone whetstone
 
 floatops: floatops.c
 	$(CC) floatops.c -o floatops
