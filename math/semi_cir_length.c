@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     end = clock();
 
     setlocale(LC_NUMERIC, "");
-    printf("%s@%'d\t%'0.20f\n", argv[0], LIMIT, pi);
+    printf("%s@%'d\t%'0.20f\n", argv[0], LIMIT * 2, pi);
     printf("execution time: %0.6f secs.\n",
            (float) (end - start) / (float) CLOCKS_PER_SEC);
 }

@@ -71,5 +71,5 @@ int main(int argc, char *argv[])
                 for (int l = 0; l < SIZE; l++)
                     result += reals[i] * reals[j] - reals[i] / reals[j];
     end = clock();
-    printf("asmd\t%0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
+    printf("all\t%0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
 } /* main */

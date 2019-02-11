@@ -4,7 +4,9 @@
 #include <locale.h>
 
 #define LIMIT 10000000
-#define M_PI  3.14159265358979323846
+#ifndef M_PI
+#define M_PI  3.14159265358979323846264338327950288
+#endif
 
 typedef double real;
 
