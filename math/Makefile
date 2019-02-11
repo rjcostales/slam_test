@@ -2,7 +2,7 @@ CC     = clang
 CFLAGS = -Ofast -Wall -std=c99
 LFLAGS = -lm
 
-TARGETS = floatops intops mathops \
+TARGETS = fpops intops mathops \
 sine_area pi_archemides semi_cir_length primes \
 randfloat randgen dhrystone whetstone \
 math.o mathTest factorize a.out
