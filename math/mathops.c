@@ -5,7 +5,6 @@
 
 #include <math.h>
 
-
 #define LOOP 10000
 #define SIZE 10000
 
@@ -15,8 +14,8 @@ int main(int argc, char *argv[])
 {
     real reals[SIZE];
     real result;
-    clock_t start, end;
 
+    clock_t start, end;
     setlocale(LC_NUMERIC, "");
 
     printf("%s\t%'d - %'d\n", argv[0], LOOP, SIZE);
