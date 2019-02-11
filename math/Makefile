@@ -3,16 +3,16 @@ CFLAGS = -Ofast -Wall -std=c99
 LFLAGS = -lm
 
 TARGETS = fpops intops mathops \
-sine_area pi_archemides semi_cir_length primes \
+sine_area pi_archemides semi_cir_arc primes \
 randfloat randgen dhrystone whetstone \
-math.o mathTest factorize a.out
+math.o math_test factorize a.out
 SOURCES = *.c
 HEADERS = *.h
 
-all: fpops intops mathops \
-sine_area pi_archemides semi_cir_length primes \
-randfloat randgen dhrystone whetstone \
-math.o mathTest factorize
+all: intops fpops mathops \
+pi_archemides semi_cir_arc primes sine_area \
+dhrystone whetstone \
+math.o math_test randgen randfloat factorize
 
 fpops: fpops.c
 	$(CC) fpops.c -o fpops
@@ -26,8 +26,8 @@ mathops: mathops.c
 math: math.c
 	$(CC) $(CFLAGS) -c math.c -o math.o
 
-mathTest: mathTest.c
-	$(CC) $(CFLAGS) mathTest.c math.o -o mathTest
+math_test: math_test.c
+	$(CC) $(CFLAGS) math_test.c math.o -o math_test
 
 factorize: factorize.c
 	$(CC) $(CFLAGS) factorize.c -o factorize $(LFLAGS)
@@ -38,8 +38,8 @@ sine_area: sine_area.c
 pi_archemides: pi_archemides.c
 	$(CC) $(CFLAGS) pi_archemides.c -o pi_archemides $(LFLAGS)
 
-semi_cir_length: semi_cir_length.c
-	$(CC) $(CFLAGS) semi_cir_length.c -o semi_cir_length $(LFLAGS)
+semi_cir_arc: semi_cir_arc.c
+	$(CC) $(CFLAGS) semi_cir_arc.c -o semi_cir_arc $(LFLAGS)
 
 primes: primes.c
 	$(CC) $(CFLAGS) primes.c -o primes

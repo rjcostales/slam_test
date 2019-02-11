@@ -4,7 +4,7 @@ fpops
 mathops
 
 math.o
-mathTest
+math_test
 
 factorize
 primes
@@ -13,7 +13,7 @@ randfloat
 
 sine_area
 pi_archemides
-semi_cir_length
+semi_cir_arc
 
 dhrystone
 whetstone

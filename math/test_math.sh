@@ -7,7 +7,7 @@ echo ""
 ./pi_archemides
 echo ""
 
-./semi_cir_length
+./semi_cir_arc
 echo ""
 
 ./sine_area
