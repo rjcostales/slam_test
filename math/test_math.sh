@@ -1,6 +1,9 @@
 echo "Math Test"
 echo ""
 
+./mathops
+echo ""
+
 ./pi_archemides
 echo ""
 

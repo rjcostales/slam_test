@@ -6,6 +6,3 @@ echo ""
 
 ./fpops
 echo ""
-
-./mathops
-echo ""

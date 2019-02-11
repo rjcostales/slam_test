@@ -1,1 +1,1 @@
-C Code for testing and hacking
+C Code for testing
