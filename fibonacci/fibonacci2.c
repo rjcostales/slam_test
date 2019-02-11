@@ -9,13 +9,10 @@ int fib(int n)
 {
     count++;
     switch (n) {
-    case 0:
-        return 0;
+    case 0: return 0;
     case 1:
-    case 2:
-        return 1;
-    case 3:
-        return 2;
+    case 2: return 1;
+    case 3: return 2;
     default:
         return fib(n - 2) + fib(n - 3) * 2 + fib(n - 4);
     }

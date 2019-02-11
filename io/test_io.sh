@@ -1,13 +1,10 @@
-clear
+echo "IO Test"
 
 time ./write > /dev/null
 echo 'write null test'
 
 time ./write > test.txt
 echo 'write test'
-
-time ./read < /dev/null
-echo 'read null test'
 
 time ./read < test.txt
 echo 'read test'
@@ -17,3 +14,4 @@ echo 'copy test'
 
 time rm test.txt copy.txt
 echo 'remove test'
+echo ''

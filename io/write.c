@@ -5,14 +5,14 @@
 
 int main(int argc, char **argv)
 {
-    char buffer[BUF] = { '\0' };
+    char buffer[BUFFER] = { '\0' };
 
     srand(time(0));
 
     for (int i = 0; i < MAX; i++)
         buffer[i] = rand() % 95 + ' ';
 
-    buffer[NDX] = '\n';
+    buffer[INDEX] = '\n';
 
     for (int n = 0; n < LEN; n++)
         fputs(buffer, stdout);

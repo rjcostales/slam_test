@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 {
     const char characters[] =
         "0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz";
-    char buffer[BUF] = { '\0' };
+    char buffer[BUFFER] = { '\0' };
 
     for (int i = 0; i < LEN; i++) {
         char *ptr = &buffer[0];
@@ -37,7 +37,7 @@ int main(int argc, char **argv)
             *ptr++ = characters[r & 0x3f];
             r >>= 6;
         }
-        buffer[NDX] = '\n';
+        buffer[INDEX] = '\n';
         fputs(buffer, stdout);
     }
     return seed;

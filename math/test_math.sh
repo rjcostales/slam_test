@@ -1,6 +1,11 @@
-clear
-./intops
+echo "Math Test"
 echo ""
-./floatops
+
+./pi_archemides
 echo ""
-./mathops
+
+./semi_cir_length
+echo ""
+
+./sine_area
+echo ""

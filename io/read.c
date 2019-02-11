@@ -6,7 +6,7 @@
 
 int main(int argc, char **argv)
 {
-    char buffer[BUF];
+    char buffer[BUFFER];
 
     memset(buffer, 0, sizeof(buffer));
     while (fgets(buffer, sizeof(buffer), stdin) != NULL) {

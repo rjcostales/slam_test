@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <time.h>
-#include <math.h>
 #include <stdlib.h>
 #include <locale.h>
+
+#include <math.h>
+
 
 #define LOOP 10000
 #define COUNT 10000
