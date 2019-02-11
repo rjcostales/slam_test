@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
     setlocale(LC_NUMERIC, "");
 
-    fprintf(stderr, "%s\t%'d - %'dx%'d\n", argv[0], LOOP, COUNT, COUNT);
+    printf("%s\t%'d - %'dx%'d\n", argv[0], LOOP, COUNT, COUNT);
 
     for (int i = 0; i < COUNT; i++)
         integers[i] = rand();
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
             for (int j = 0; j < COUNT; j++)
                 result = integers[j];
     end = clock();
-    fprintf(stderr, "nop %0.6f\n",
+    printf("nop\t%0.6f\n",
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
             for (int j = 0; j < COUNT; j++)
                 result = integers[i] + integers[j];
     end = clock();
-    fprintf(stderr, "add %0.6f\n",
+    printf("add\t%0.6f\n",
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
             for (int j = 0; j < COUNT; j++)
                 result = integers[i] - integers[j];
     end = clock();
-    fprintf(stderr, "sub %0.6f\n",
+    printf("sub\t%0.6f\n",
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
             for (int j = 0; j < COUNT; j++)
                 result = integers[i] * integers[j];
     end = clock();
-    fprintf(stderr, "mul %0.6f\n",
+    printf("mul\t%0.6f\n",
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
             for (int j = 0; j < COUNT; j++)
                 result = integers[i] / integers[j];
     end = clock();
-    fprintf(stderr, "div %0.6f\n",
+    printf("div\t%0.6f\n",
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
             for (int j = 0; j < COUNT; j++)
                 result = integers[i] % integers[j];
     end = clock();
-    fprintf(stderr, "mod %0.6f\n",
+    printf("mod\t%0.6f\n",
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
             for (int j = 0; j < COUNT; j++)
                 result = integers[i] & integers[j];
     end = clock();
-    fprintf(stderr, "and %0.6f\n",
+    printf("and\t%0.6f\n",
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
             for (int j = 0; j < COUNT; j++)
                 result = integers[i] | integers[j];
     end = clock();
-    fprintf(stderr, "or  %0.6f\n",
+    printf("or\t%0.6f\n",
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
@@ -100,6 +100,6 @@ int main(int argc, char *argv[])
             for (int j = 0; j < COUNT; j++)
                 result = integers[i] ^ integers[j];
     end = clock();
-    fprintf(stderr, "xor %0.6f\n",
+    printf("xor\t%0.6f\n",
       (float) (end - start) / (float) CLOCKS_PER_SEC);
 } /* main */
