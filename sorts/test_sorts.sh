@@ -1,5 +1,4 @@
 echo "Sort Test"
-echo ""
 
 ./generate 25000 > data.txt
 

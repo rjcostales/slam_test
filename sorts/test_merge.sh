@@ -1,4 +1,4 @@
-clear
+echo "Merge Sort Test"
 
 generate 5000 > data.txt
 time ./merge < data.txt > /dev/null
@@ -36,6 +36,19 @@ generate 45000 > data.txt
 time ./merge < data.txt > /dev/null
 echo "45K"
 
-generate 49999 > data.txt
+generate 50000 > data.txt
 time ./merge < data.txt > /dev/null
 echo "50K"
+
+generate 55000 > data.txt
+time ./merge < data.txt > /dev/null
+echo "55K"
+
+generate 60000 > data.txt
+time ./merge < data.txt > /dev/null
+echo "60K"
+
+generate 65000 > data.txt
+time ./merge < data.txt > /dev/null
+echo "65K"
+echo ""
