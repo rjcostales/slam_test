@@ -9,6 +9,7 @@ mathTest
 factorize
 primes
 randgen
+randfloat
 
 sine_area
 pi_archemides

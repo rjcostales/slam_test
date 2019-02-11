@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
     int seed = 1234567890;
     int n = LEN;
 
-
     switch (argc) {
     case 3: seed = atoi(argv[2]);
     case 2: n = atoi(argv[1]);

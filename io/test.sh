@@ -1,24 +1,19 @@
 clear
 
-echo 'write null test'
 time ./write > /dev/null
-echo ''
+echo 'write null test'
 
-echo 'write test'
 time ./write > test.txt
-echo ''
+echo 'write test'
 
-echo 'read null test'
 time ./read < /dev/null
-echo ''
+echo 'read null test'
 
-echo 'read test'
 time ./read < test.txt
-echo ''
+echo 'read test'
 
-echo 'copy test'
 time cp test.txt copy.txt
-echo ''
+echo 'copy test'
 
-echo 'remove test'
 time rm test.txt copy.txt
+echo 'remove test'
