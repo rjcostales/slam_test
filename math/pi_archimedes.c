@@ -9,7 +9,7 @@
 
 typedef double real;
 
-#define square(x) (x * (x))
+#define square(x) (x*(x))
 
 int main(int argc, char *argv[])
 {
