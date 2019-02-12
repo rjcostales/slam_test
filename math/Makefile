@@ -1,23 +1,22 @@
-CC     = clang
-CFLAGS = -Wall -std=c99
-LFLAGS = -lm
+CC		= clang
+CFLAGS 	= -Wall -std=c99
+LIBS 	= -lm
 
-PROJECT := .
-SOURCES := $(shell ls *.c)
-HEADERS := $(shell ls *.h)
-OBJECTS := $(shell ls *.o)
-TARGETS := $(patsubst %.c,%,$(SOURCES))
+SRCS	:= $(wildcard *.c)
+HDRS	:= $(wildcard *.h)
+OBJS	:= $(wildcard *.o)
+TGTS 	:= $(patsubst %.c,%,$(SRCS))
 
-all: $(TARGETS)
+all:$(TGTS)
 
-$(TARGETS):
-	$(CC) $(CFLAGS) $(LFLAGS) $@.c -o $@
+$(TGTS):$(SRCS)
+	$(CC) $(CFLAGS) $(LIBS) $< -o $@
 
 math:
 	$(CC) -Ofast $(CFLAGS) -c math.c -o math.o
 
 math_test:
-	$(CC) $(CFLAGS) $(LFLAGS) math_test.c math.o -o $@
+	$(CC) $(CFLAGS) $(LIBS) math_test.c math.o -o $@
 
 clean:
-	rm -f $(TARGETS) $(OBJECTS)
+	rm -f $(TGTS) $(OBJS)

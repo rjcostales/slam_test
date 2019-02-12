@@ -1,15 +1,14 @@
-CC     = clang
-CFLAGS = -Ofast -Wall -std=c99
+CC		= clang
+CFLAGS	= -Ofast -Wall -std=c99
 
-PROJECT := .
-SOURCES := $(shell find $(PROJECT) -maxdepth 1 -type f -name "*.c")
-HEADERS := $(shell find $(PROJECT) -maxdepth 1 -type f -name "*.h")
-TARGETS := $(patsubst %.c,%,$(SOURCES))
+SRCS	:= $(wildcard *.c)
+HDRS	:= $(wildcard *.h)
+TGTS 	:= $(patsubst %.c,%,$(SRCS))
 
-all: $(TARGETS)
+all:$(TGTS)
 
-$(TARGETS):
-	$(CC) $(CFLAGS) $@.c -o $@
+$(TGTS):$(SRCS)
+	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	rm $(TARGETS)
+	rm -f $(TGTS)
