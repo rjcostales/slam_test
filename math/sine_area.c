@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     real area  = 0.0;
     real delta = M_PI / LIMIT;
 
-    clock_t start, end;
+    clock_t start, stop;
     start = clock();
     for (int i = 0; i < LIMIT; i++) {
 
@@ -24,10 +24,10 @@ int main(int argc, char *argv[])
 
         area += y * delta;
     }
-    end = clock();
+    stop = clock();
 
     setlocale(LC_NUMERIC, "");
     printf("%s\t%'d\t%'0.20f\n", argv[0], LIMIT, area);
     printf("execution time: %0.6f secs.\n",
-           (float) (end - start) / (float) CLOCKS_PER_SEC);
+           (float) (stop - start) / (float) CLOCKS_PER_SEC);
 }

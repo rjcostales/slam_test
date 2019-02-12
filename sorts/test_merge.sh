@@ -52,3 +52,5 @@ generate 65000 > data.txt
 time ./merge < data.txt > /dev/null
 echo "65K"
 echo ""
+
+rm data.txt

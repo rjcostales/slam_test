@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <time.h>
+#include <locale.h>
+
+#define MAX 1000000
 
 bool isPrime(int n)
 {
@@ -18,10 +22,16 @@ bool isPrime(int n)
 int main(int argc, char *argv[])
 {
     int c = 0;
+    clock_t start, stop;
 
-    for (int i = 1; i < 0xFFFFFFFF; i++)
+    start = clock();
+    for (int i = 1; i < MAX; i++)
         if (isPrime(i))
             c++;
+    stop = clock();
 
-    printf("%u\n", c);
+    setlocale(LC_NUMERIC, "");
+    printf("%s\tfound %'d less than %'d\n", argv[0], c, MAX);
+    printf("execution time: %0.6f secs.\n",
+           (float) (stop - start) / (float) CLOCKS_PER_SEC);
 }

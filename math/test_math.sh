@@ -4,7 +4,7 @@ echo ""
 ./math_ops
 echo ""
 
-./pi_archemides
+./pi_archimedes
 echo ""
 
 ./semi_cir_arc

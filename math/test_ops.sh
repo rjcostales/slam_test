@@ -6,3 +6,6 @@ echo ""
 
 ./fp_ops
 echo ""
+
+./primes
+echo ""

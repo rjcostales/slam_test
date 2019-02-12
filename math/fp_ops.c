@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
     real reals[SIZE];
     real result;
-    clock_t start, end;
+    clock_t start, stop;
 
     setlocale(LC_NUMERIC, "");
 
@@ -28,40 +28,40 @@ int main(int argc, char *argv[])
         for (int i = 0; i < SIZE; i++)
             for (int j = 0; j < SIZE; j++)
                 result = reals[j];
-    end = clock();
-    printf("nop\t%0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
+    stop = clock();
+    printf("nop\t%0.6f\n", (float) (stop - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
     for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < SIZE; i++)
             for (int j = 0; j < SIZE; j++)
                 result = reals[i] + reals[j];
-    end = clock();
-    printf("add\t%0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
+    stop = clock();
+    printf("add\t%0.6f\n", (float) (stop - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
     for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < SIZE; i++)
             for (int j = 0; j < SIZE; j++)
                 result = reals[i] - reals[j];
-    end = clock();
-    printf("sub\t%0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
+    stop = clock();
+    printf("sub\t%0.6f\n", (float) (stop - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
     for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < SIZE; i++)
             for (int j = 0; j < SIZE; j++)
                 result = reals[i] * reals[j];
-    end = clock();
-    printf("mul\t%0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
+    stop = clock();
+    printf("mul\t%0.6f\n", (float) (stop - start) / (float) CLOCKS_PER_SEC);
 
     start = clock();
     for (int t = 0; t < LOOP; t++)
         for (int i = 0; i < SIZE; i++)
             for (int j = 0; j < SIZE; j++)
                 result = reals[i] / reals[j];
-    end = clock();
-    printf("div\t%0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
+    stop = clock();
+    printf("div\t%0.6f\n", (float) (stop - start) / (float) CLOCKS_PER_SEC);
 
     printf("add sub mul div\t%'dx%'dX%'dx%'d\n", SIZE, SIZE, SIZE, SIZE);
     start = clock();
@@ -70,6 +70,6 @@ int main(int argc, char *argv[])
             for (int k = 0; k < SIZE; k++)
                 for (int l = 0; l < SIZE; l++)
                     result += reals[i] * reals[j] - reals[i] / reals[j];
-    end = clock();
-    printf("all\t%0.6f\n", (float) (end - start) / (float) CLOCKS_PER_SEC);
+    stop = clock();
+    printf("all\t%0.6f\n", (float) (stop - start) / (float) CLOCKS_PER_SEC);
 } /* main */

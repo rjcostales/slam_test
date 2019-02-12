@@ -9,14 +9,14 @@ TGTS	:= $(patsubst %.c,%,$(SRCS))
 
 all:$(TGTS)
 
-$(TGTS):$(SRCS)
-	$(CC) $(CFLAGS) $(LIBS) $< -o $@
+$(TGTS):
+	$(CC) $(CFLAGS) $(LIBS) $@.c -o $@
 
 math:
-	$(CC) -Ofast $(CFLAGS) -c math.c -o math.o
+	$(CC) -Ofast $(CFLAGS) -c $@.c -o $@.o
 
-math_test:
-	$(CC) $(CFLAGS) $(LIBS) math_test.c math.o -o $@
+math_test:math
+	$(CC) $(CFLAGS) $(LIBS) $@.c math.o -o $@
 
 clean:
 	rm -f $(TGTS) $(OBJS)
