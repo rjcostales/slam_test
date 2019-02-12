@@ -1,8 +1,8 @@
 echo "Ops Test"
 echo ""
 
-./intops
+./int_ops
 echo ""
 
-./fpops
+./fp_ops
 echo ""

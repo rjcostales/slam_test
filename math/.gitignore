@@ -1,7 +1,7 @@
 # executables
-intops
-fpops
-mathops
+int_ops
+fp_ops
+math_ops
 
 sine_area
 pi_archemides
