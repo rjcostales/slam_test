@@ -2,8 +2,8 @@ CC     = clang
 CFLAGS = -Ofast -Wall -std=c99
 
 PROJECT := .
-SOURCES := $(shell find $(PROJECT) -maxdepth 1 -type f -name "*.c")
-HEADERS := $(shell find $(PROJECT) -maxdepth 1 -type f -name "*.h")
+SOURCES := $(shell ls *.c)
+HEADERS := $(shell ls *.h)
 TARGETS := $(patsubst %.c,%,$(SOURCES))
 
 all: $(TARGETS)
