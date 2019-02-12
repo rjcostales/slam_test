@@ -18,6 +18,12 @@ math:
 
 math_test:
 	$(CC) $(CFLAGS) $(LFLAGS) math_test.c math.o -o $@
+<<<<<<< Updated upstream
+=======
+
+whetstone:
+	$(CC) $(LFLAGS) $@.c -o $@
+>>>>>>> Stashed changes
 
 clean:
 	rm -f $(TARGETS) $(OBJECTS)
