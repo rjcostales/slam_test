@@ -22,8 +22,6 @@ int main(int argc, char *argv[])
 
     for (int i = 0; i < SIZE; i++)
         reals[i] = (float) rand() / (float) rand();
-    // for (int i = 0; i < SIZE; i++)
-    //     printf("%g\n", reals[i]);
 
     start = clock();
     for (int t = 0; t < LOOP; t++)

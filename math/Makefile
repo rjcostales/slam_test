@@ -1,5 +1,5 @@
 CC     = clang
-CFLAGS = -Ofast -Wall -std=c99
+CFLAGS = -Wall -std=c99
 LFLAGS = -lm
 
 PROJECT := .
@@ -14,16 +14,10 @@ $(TARGETS):
 	$(CC) $(CFLAGS) $(LFLAGS) $@.c -o $@
 
 math:
-	$(CC) $(CFLAGS) -c math.c -o math.o
+	$(CC) -Ofast $(CFLAGS) -c math.c -o math.o
 
 math_test:
 	$(CC) $(CFLAGS) $(LFLAGS) math_test.c math.o -o $@
-<<<<<<< Updated upstream
-=======
-
-whetstone:
-	$(CC) $(LFLAGS) $@.c -o $@
->>>>>>> Stashed changes
 
 clean:
 	rm -f $(TARGETS) $(OBJECTS)
