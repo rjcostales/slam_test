@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
     real result;
 
     clock_t start, stop;
+
     setlocale(LC_NUMERIC, "");
 
     printf("%s\t%'d - %'d\n", argv[0], LOOP, SIZE);
