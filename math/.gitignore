@@ -3,17 +3,18 @@ intops
 fpops
 mathops
 
+sine_area
+pi_archemides
+semi_cir_arc
+
 math.o
 math_test
 
 factorize
 primes
+linear_regression
 randgen
 randfloat
-
-sine_area
-pi_archemides
-semi_cir_arc
 
 dhrystone
 whetstone
