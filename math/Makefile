@@ -12,11 +12,5 @@ all:$(TGTS)
 $(TGTS):
 	$(CC) $(CFLAGS) $(LIBS) $@.c -o $@
 
-math_test:math
-	$(CC) $(CFLAGS) $(LIBS) $@.c math.o -o $@
-
-math:
-	$(CC) $(CFLAGS) -c $@.c -o $@.o
-
 clean:
 	rm -f $(TGTS) $(OBJS)
