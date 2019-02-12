@@ -9,6 +9,4 @@ int main(int argc, char *argv[])
     printf("lcm %d\n", lcm(1958, 1024));
     printf("gcd %d\n", gcd(1958, 1024));
     printf("power %d\n", power(2, 16));
-
-
 }

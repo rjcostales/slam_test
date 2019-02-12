@@ -1,19 +1,20 @@
 # executables
-intops
-fpops
-mathops
+int_ops
+fp_ops
+math_ops
+
+sine_area
+pi_archimedes
+semi_cir_arc
 
 math.o
-mathTest
+math_test
 
 factorize
 primes
+linear_regression
 randgen
 randfloat
-
-sine_area
-pi_archemides
-semi_cir_length
 
 dhrystone
 whetstone

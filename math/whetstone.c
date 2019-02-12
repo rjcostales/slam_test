@@ -70,8 +70,7 @@ C**********************************************************************
 #define IF		if
 
 /* function prototypes */
-void POUT(long N, long J, long K, double X1, double X2, double X3,
-          double X4);
+void POUT(long N, long J, long K, double X1, double X2, double X3, double X4);
 void PA(double E[]);
 void P0(void);
 void P3(double X, double Y, double *Z);
@@ -81,24 +80,24 @@ void P3(double X, double Y, double *Z);
 	COMMON T,T1,T2,E1(4),J,K,L
 */
 double T, T1, T2, E1[5];
-int J, K, L;
+int    J, K, L;
 
 int main(int argc, char *argv[])
 {
     /* used in the FORTRAN version */
-    long I;
-    long N1, N2, N3, N4, N6, N7, N8, N9, N10, N11;
+    long   I;
+    long   N1, N2, N3, N4, N6, N7, N8, N9, N10, N11;
     double X1, X2, X3, X4, X, Y, Z;
-    long LOOP;
-    int II, JJ;
+    long   LOOP;
+    int    II, JJ;
 
     /* added for this version */
-    long loopstart;
-    long startsec, finisec;
+    long  loopstart;
+    long  startsec, finisec;
     float KIPS;
-    int continuous;
+    int   continuous;
 
-    loopstart = 1000;           /* see the note about LOOP below */
+    loopstart = 100000;           /* see the note about LOOP below */
     continuous = 0;
 
     II = 1;                     /* start at the first arg (temp use of II here) */

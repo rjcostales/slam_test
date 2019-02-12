@@ -1,11 +1,11 @@
-CC     = clang
-CFLAGS = -Ofast -Wall -std=c99
+CC		= clang
+CFLAGS	= -Ofast -Wall -std=c99
 
-TARGETS = bubble insertion selection merge quicksort generate
-SOURCES = *.c
-HEADERS = *.h
+SRCS	:= $(wildcard *.c)
+HDRS	:= $(wildcard *.h)
+TGTS	:= $(patsubst %.c,%,$(SRCS))
 
-all: $(TARGETS)
+all:$(TGTS)
 
 clean:
-	rm -f $(TARGETS)
+	rm -f $(TGTS)

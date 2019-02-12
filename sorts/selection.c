@@ -6,7 +6,7 @@
 
 #undef  PRINT
 #define MAXLINE 1024
-#define MAXSIZE 50000
+#define MAXSIZE 65536
 
 typedef char *str;
 

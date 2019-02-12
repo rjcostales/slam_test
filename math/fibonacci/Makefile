@@ -1,11 +1,11 @@
-CC     = clang
-CFLAGS = -Ofast -Wall -std=c99
+CC		= clang
+CFLAGS	= -Ofast -Wall -std=c99
 
-TARGETS = fibonacci0 fibonacci1 fibonacci2 fibonacci3 fibonacci4 fibonacciT
-SOURCES = *.c
-HEADERS = *.h
+SRCS	:= $(wildcard *.c)
+HDRS	:= $(wildcard *.h)
+TGTS	:= $(patsubst %.c,%,$(SRCS))
 
-all: $(TARGETS)
+all:$(TGTS)
 
 clean:
-	rm -f $(TARGETS)
+	rm -f $(TGTS)

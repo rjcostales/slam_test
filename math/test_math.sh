@@ -1,10 +1,13 @@
 echo "Math Test"
 echo ""
 
-./pi_archemides
+./math_ops
 echo ""
 
-./semi_cir_length
+./pi_archimedes
+echo ""
+
+./semi_cir_arc
 echo ""
 
 ./sine_area

@@ -1,11 +1,11 @@
-CC     = clang
-CFLAGS = -Ofast -Wall -std=c99
+CC		= clang
+CFLAGS	= -Ofast -Wall -std=c99
 
-OBJECTS = read write write1 write2 write3
-SOURCES = *.c
-HEADERS = *.h
+SRCS	:= $(wildcard *.c)
+HDRS	:= $(wildcard *.h)
+TGTS	:= $(patsubst %.c,%,$(SRCS))
 
-all: $(OBJECTS)
+all:$(TGTS)
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(TGTS)
