@@ -383,10 +383,10 @@
  */
 
 /* Accuracy of timings and human fatigue controlled by next two lines */
-//#define LOOP    5000          /* Use this for slow or 16 bit machines */
-//#define LOOP    50000         /* Use this for slow or 16 bit machines */
-//#define LOOP    500000        /* Use this for faster machines */
-#define LOOP    50000000        /* MacBook Pro */
+//#define LOOP    5000            /* Use this for slow or 16 bit machines */
+//#define LOOP    50000           /* Use this for slow or 16 bit machines */
+//#define LOOP    500000          /* Use this for faster machines */
+#define LOOP    5000000         /* MacBook Pro */
 
 /* Compiler dependent options */
 #undef  NOENUM                  /* Define if compiler has no enum's */
@@ -595,6 +595,7 @@ void Proc0()
            ((long) LOOP) * HZ / benchtime);
 #endif
 
+    printf("\n");
 }
 
 void Proc1(PtrParIn)

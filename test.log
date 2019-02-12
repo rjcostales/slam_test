@@ -1,0 +1,258 @@
+rm -f read write3 write2 write write1
+clang -Ofast -Wall -std=c99    read.c   -o read
+clang -Ofast -Wall -std=c99    write3.c   -o write3
+clang -Ofast -Wall -std=c99    write2.c   -o write2
+clang -Ofast -Wall -std=c99    write.c   -o write
+clang -Ofast -Wall -std=c99    write1.c   -o write1
+IO Test
+
+real	0m0.504s
+user	0m0.416s
+sys	0m0.088s
+write null test
+
+real	0m4.665s
+user	0m0.453s
+sys	0m3.999s
+write test
+
+real	0m0.993s
+user	0m0.457s
+sys	0m0.536s
+read test
+
+real	0m3.292s
+user	0m0.005s
+sys	0m2.408s
+copy test
+
+real	0m5.583s
+user	0m0.001s
+sys	0m0.634s
+remove test
+
+Write Test
+
+real	0m0.519s
+user	0m0.430s
+sys	0m0.089s
+write test
+
+real	0m2.310s
+user	0m2.210s
+sys	0m0.101s
+write1 test
+
+real	0m8.053s
+user	0m7.988s
+sys	0m0.069s
+write2 test
+
+real	0m17.844s
+user	0m2.250s
+sys	0m15.600s
+write3 test
+
+rm -f read write3 write2 write write1
+Makefile:16: warning: overriding recipe for target 'math'
+Makefile:13: warning: ignoring old recipe for target 'math'
+Makefile:19: warning: overriding recipe for target 'math_test'
+Makefile:13: warning: ignoring old recipe for target 'math_test'
+rm -f randgen pi_archimedes sine_area primes factorize math linear_regression whetstone math_ops dhrystone randfloat fp_ops int_ops semi_cir_arc math_test 
+Makefile:16: warning: overriding recipe for target 'math'
+Makefile:13: warning: ignoring old recipe for target 'math'
+Makefile:19: warning: overriding recipe for target 'math_test'
+Makefile:13: warning: ignoring old recipe for target 'math_test'
+clang -Wall -std=c99 -lm randgen.c -o randgen
+clang -Wall -std=c99 -lm pi_archimedes.c -o pi_archimedes
+clang -Wall -std=c99 -lm sine_area.c -o sine_area
+clang -Wall -std=c99 -lm primes.c -o primes
+clang -Wall -std=c99 -lm factorize.c -o factorize
+clang -Ofast -Wall -std=c99 -c math.c -o math.o
+clang -Wall -std=c99 -lm linear_regression.c -o linear_regression
+clang -Wall -std=c99 -lm whetstone.c -o whetstone
+clang -Wall -std=c99 -lm math_ops.c -o math_ops
+clang -Wall -std=c99 -lm dhrystone.c -o dhrystone
+clang -Wall -std=c99 -lm randfloat.c -o randfloat
+clang -Wall -std=c99 -lm fp_ops.c -o fp_ops
+clang -Wall -std=c99 -lm int_ops.c -o int_ops
+clang -Wall -std=c99 -lm semi_cir_arc.c -o semi_cir_arc
+clang -Wall -std=c99 -lm math_test.c math.o -o math_test
+Ops Test
+
+./int_ops	10,000 - 100x100
+nop	0.592783
+add	0.635005
+sub	0.634567
+mul	0.634056
+div	1.666373
+mod	1.681047
+and	0.635130
+or	0.634414
+xor	0.633717
+
+./fp_ops	10,000 - 100x100
+nop	0.589065
+add	0.637923
+sub	0.634457
+mul	0.633708
+div	1.463111
+add sub mul div	100x100X100x100
+all	1.798399
+
+./primes	found 78,498 less than 1,000,000
+execution time: 0.675949 secs.
+
+./primes	found 78,498 less than 1,000,000
+execution time: 0.676415 secs.
+Math Test
+
+./math_ops	10,000 - 10,000
+nop	0.573566
+sqrt	3.084461
+sin	8.521476
+cos	8.502050
+tan	10.779273
+atan	9.179907
+exp	7.386647
+log	9.367346
+log10	10.383071
+
+./pi_archimedes	100x100,000	3.14159265358979356009
+s = 8.260932e-31
+n = 3,802,951,800,684,688,204,490,109,616,128
+execution time: 0.806536 secs.
+
+./semi_cir_arc	10,000,000	3.14159265356343331277
+execution time: 0.837041 secs.
+
+./sine_area	10,000,000	2.00000000000007238654
+execution time: 0.982895 secs.
+
+Dhrystone(1.1) time for 50000000 passes = 15
+This machine benchmarks at 3160556 dhrystones/second
+
+Loops: 100000, Iterations: 1, Duration: 8 sec.
+C Converted Double Precision Whetstones: 1250.0 MIPS
+Makefile:16: warning: overriding recipe for target 'math'
+Makefile:13: warning: ignoring old recipe for target 'math'
+Makefile:19: warning: overriding recipe for target 'math_test'
+Makefile:13: warning: ignoring old recipe for target 'math_test'
+rm -f randgen sine_area primes factorize math linear_regression whetstone math_ops dhrystone randfloat fp_ops int_ops semi_cir_arc math_test pi_archimedes math.o
+rm -f fibonacci fibonacci0 fibonacciT fibonacci1 fibonacci3 fibonacci2 fibonacci4
+clang -Ofast -Wall -std=c99    fibonacci.c   -o fibonacci
+clang -Ofast -Wall -std=c99    fibonacci0.c   -o fibonacci0
+clang -Ofast -Wall -std=c99    fibonacciT.c   -o fibonacciT
+clang -Ofast -Wall -std=c99    fibonacci1.c   -o fibonacci1
+clang -Ofast -Wall -std=c99    fibonacci3.c   -o fibonacci3
+clang -Ofast -Wall -std=c99    fibonacci2.c   -o fibonacci2
+clang -Ofast -Wall -std=c99    fibonacci4.c   -o fibonacci4
+Fibonacci Test
+
+./fibonacci0(40)=102,334,155 in 331,160,281
+execution time: 2.829260 secs.
+
+./fibonacci1(40)=102,334,155 in 204,668,309
+execution time: 1.663779 secs.
+
+./fibonacci2(40)=102,334,155 in 3,249,913
+execution time: 0.021962 secs.
+
+./fibonacci3(40)=102,334,155 in 110,809
+execution time: 0.000944 secs.
+
+./fibonacci4(40)=102,334,155 in 4,209
+execution time: 0.000032 secs.
+
+rm -f fibonacci fibonacci0 fibonacciT fibonacci1 fibonacci3 fibonacci2 fibonacci4
+rm -f generate bubble merge quicksort insertion selection
+clang -Ofast -Wall -std=c99    generate.c   -o generate
+clang -Ofast -Wall -std=c99    bubble.c   -o bubble
+clang -Ofast -Wall -std=c99    merge.c   -o merge
+clang -Ofast -Wall -std=c99    quicksort.c   -o quicksort
+clang -Ofast -Wall -std=c99    insertion.c   -o insertion
+clang -Ofast -Wall -std=c99    selection.c   -o selection
+Sort Test
+./bubble 25000 records
+execution time: 22.745773 secs.
+
+./selection 25000 records
+execution time: 19.401979 secs.
+
+./insertion 25000 records
+execution time: 14.189476 secs.
+
+./merge 25000 records
+execution time: 0.019887 secs.
+
+./quicksort 25000 records
+execution time: 0.017502 secs.
+
+Merge Sort Test
+
+real	0m0.008s
+user	0m0.004s
+sys	0m0.004s
+5K
+
+real	0m0.014s
+user	0m0.005s
+sys	0m0.010s
+10K
+
+real	0m0.022s
+user	0m0.013s
+sys	0m0.009s
+15K
+
+real	0m0.027s
+user	0m0.022s
+sys	0m0.005s
+20K
+
+real	0m0.034s
+user	0m0.023s
+sys	0m0.012s
+25K
+
+real	0m0.042s
+user	0m0.037s
+sys	0m0.005s
+30K
+
+real	0m0.050s
+user	0m0.045s
+sys	0m0.005s
+35K
+
+real	0m0.057s
+user	0m0.045s
+sys	0m0.012s
+40K
+
+real	0m0.066s
+user	0m0.042s
+sys	0m0.023s
+45K
+
+real	0m0.074s
+user	0m0.066s
+sys	0m0.008s
+50K
+
+real	0m0.082s
+user	0m0.078s
+sys	0m0.004s
+55K
+
+real	0m0.091s
+user	0m0.078s
+sys	0m0.013s
+60K
+
+real	0m0.099s
+user	0m0.083s
+sys	0m0.016s
+65K
+
+rm -f generate bubble merge quicksort insertion selection

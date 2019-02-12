@@ -367,7 +367,6 @@ IILOOP:
     C      where TIME is in seconds.
     C--------------------------------------------------------------------
     */
-    printf("\n");
     if (finisec - startsec <= 0) {
         printf("Insufficient duration- Increase the LOOP count\n");
         return (1);
@@ -387,6 +386,8 @@ IILOOP:
     if (continuous)
         goto LCONT;
 
+    printf("\n");
+    
     return (0);
 }
 

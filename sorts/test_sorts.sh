@@ -1,6 +1,6 @@
 echo "Sort Test"
 
-./generate 25000 > data.txt
+./generate 10000 > data.txt
 
 ./bubble < data.txt
 echo ""

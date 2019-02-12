@@ -1,31 +1,30 @@
 cd io/
-make clean
-make
+make --silent clean
+make --silent
 ./test_io.sh
-./test_write.sh
-make clean
+# ./test_write.sh
+make --silent clean
 
 cd ../math
-make clean
-make
+make --silent clean
+make --silent
 ./test_ops.sh
-./primes
 ./test_math.sh
 ./dhrystone
 ./whetstone
-make clean
+make --silent clean
 
 cd fibonacci/
-make clean
-make
+make --silent clean
+make --silent
 ./test_fib.sh
-make clean
+make --silent clean
 
 cd ../../sorts
-make clean
-make
+make --silent clean
+make --silent
 ./test_sorts.sh
-./test_merge.sh
-make clean
+# ./test_merge.sh
+make --silent clean
 
 cd ..
