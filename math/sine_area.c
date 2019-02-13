@@ -3,7 +3,7 @@
 #include <math.h>
 #include <locale.h>
 
-#define LIMIT 10000000
+#define LIMIT 1000000
 #ifndef M_PI
 # define M_PI 3.14159265358979323846264338327950288
 #endif

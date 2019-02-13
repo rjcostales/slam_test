@@ -4,8 +4,8 @@
 #include <time.h>
 #include <locale.h>
 
+#define LOOP  1000
 #define LIMIT 100
-#define LOOP  100000
 
 typedef double real;
 
