@@ -1,5 +1,5 @@
-CC		= clang
-CFLAGS	= -Wall -std=c99
+CC		= gcc
+CFLAGS	= -Wall -std=c11
 LIBS	= -lm
 
 SRCS	:= $(wildcard *.c)
