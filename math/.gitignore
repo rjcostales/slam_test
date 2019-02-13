@@ -3,18 +3,12 @@ int_ops
 fp_ops
 math_ops
 
+fibonacci
+primes
+
 sine_area
 pi_archimedes
 semi_cir_arc
-
-math.o
-math_test
-
-factorize
-primes
-linear_regression
-randgen
-randfloat
 
 dhrystone
 whetstone

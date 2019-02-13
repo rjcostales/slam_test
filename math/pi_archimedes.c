@@ -4,12 +4,12 @@
 #include <time.h>
 #include <locale.h>
 
+#define LOOP  10000
 #define LIMIT 100
-#define LOOP  100000
 
 typedef double real;
 
-#define square(x) (x * (x))
+#define square(x) (x*(x))
 
 int main(int argc, char *argv[])
 {

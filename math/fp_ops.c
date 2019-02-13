@@ -3,7 +3,7 @@
 #include <time.h>
 #include <locale.h>
 
-#define LOOP 10000
+#define LOOP 100
 #define SIZE 100
 
 typedef double real;
@@ -63,13 +63,12 @@ int main(int argc, char *argv[])
     stop = clock();
     printf("div\t%0.6f\n", (float) (stop - start) / (float) CLOCKS_PER_SEC);
 
-    printf("add sub mul div\t%'dx%'dX%'dx%'d\n", SIZE, SIZE, SIZE, SIZE);
+    printf("add sub mul\t%'dx%'dX%'d\n", SIZE, SIZE, SIZE);
     start = clock();
     for (int i = 0; i < SIZE; i++)
         for (int j = 0; j < SIZE; j++)
             for (int k = 0; k < SIZE; k++)
-                for (int l = 0; l < SIZE; l++)
-                    result += reals[i] * reals[j] - reals[i] / reals[j];
+                result += reals[i] * reals[j] - reals[i];
     stop = clock();
     printf("all\t%0.6f\n", (float) (stop - start) / (float) CLOCKS_PER_SEC);
 } /* main */

@@ -1,5 +1,5 @@
-CC		= clang
-CFLAGS	= -Wall -std=c99
+CC		= gcc
+CFLAGS	= -std=c11
 LIBS	= -lm
 
 SRCS	:= $(wildcard *.c)
@@ -11,12 +11,6 @@ all:$(TGTS)
 
 $(TGTS):
 	$(CC) $(CFLAGS) $(LIBS) $@.c -o $@
-
-math:
-	$(CC) -Ofast $(CFLAGS) -c $@.c -o $@.o
-
-math_test:math
-	$(CC) $(CFLAGS) $(LIBS) $@.c math.o -o $@
 
 clean:
 	rm -f $(TGTS) $(OBJS)

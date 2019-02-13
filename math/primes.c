@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     stop = clock();
 
     setlocale(LC_NUMERIC, "");
-    printf("%s\tfound %'d less than %'d\n", argv[0], c, MAX);
+    printf("%s\tfound %'d primes less than %'d\n", argv[0], c, MAX);
     printf("execution time: %0.6f secs.\n",
       (float) (stop - start) / (float) CLOCKS_PER_SEC);
 }

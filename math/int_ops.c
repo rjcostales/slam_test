@@ -3,7 +3,7 @@
 #include <time.h>
 #include <locale.h>
 
-#define LOOP 10000
+#define LOOP 100
 #define SIZE 100
 
 int main(int argc, char *argv[])
