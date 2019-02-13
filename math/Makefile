@@ -1,5 +1,5 @@
 CC		= gcc
-CFLAGS	= -Wall -std=c11
+CFLAGS	= -Wall -std=c99
 LIBS	= -lm
 
 SRCS	:= $(wildcard *.c)
@@ -10,7 +10,7 @@ TGTS	:= $(patsubst %.c,%,$(SRCS))
 all:$(TGTS)
 
 $(TGTS):
-	$(CC) $(CFLAGS) $(LIBS) $@.c -o $@
+	$(CC) $(CFLAGS) $@.c -o $@ $(LIBS)
 
 clean:
 	rm -f $(TGTS) $(OBJS)
