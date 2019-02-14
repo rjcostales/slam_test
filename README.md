@@ -1,19 +1,18 @@
 # C Code for Small Linux Arm Machine (SLAM) Testing
 
-int_ops  - test integer operation
-fp_ops   - test floating point operation
-math_ops - test <math.h> functions
+* int_ops  - test integer operation
+* fp_ops   - test floating point operation
+* math_ops - test <math.h> functions
 
-fibonacci   - recursive fibonacci sequence test
-primes      - count primes between 1 - 1,000,000
+* fibonacci   - recursive fibonacci sequence test
+* primes      - count primes between 1 - 1,000,000
 
-pi_archemides   - estimate pi using Archemides algorithm
-semi_cir_arc    - estimate arc of a semi cicle
-sine_area       - estimate
+* pi_archemides   - estimate pi using Archemides algorithm
+* semi_cir_arc    - estimate arc of a semi cicle
+* sine_area       - estimate
 
-dhrystone       - Integer Test. See source code for notes.
-whetstone       - Floating Point Test. See source code for notes.
-
+* dhrystone       - Integer Test. See source code for notes.
+* whetstone       - Floating Point Test. See source code for notes.
 
 ## TEST RESULTS
 Raspberry Pi 2 w/16GB Sandisk, Class 10.
