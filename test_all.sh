@@ -1,3 +1,6 @@
+uname -a
+echo ""
+
 cd math/
 make --silent clean
 make --silent

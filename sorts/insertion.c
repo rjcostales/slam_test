@@ -34,7 +34,6 @@ int main(int argc, char *argv[])
 {
     str  tmp, page[MAXSIZE];
     int  i, j, size = read(page);
-    printf("%s %d records\n", argv[0], size);
 
     // insertion sort
     clock_t start, end;
@@ -54,6 +53,7 @@ int main(int argc, char *argv[])
     setlocale(LC_NUMERIC, "");
     printf("execution time: %0.6f secs.\n",
            (float) (end - start) / (float) CLOCKS_PER_SEC);
+    printf("%s %d records\n", argv[0], size);
 
     print(page);
 
