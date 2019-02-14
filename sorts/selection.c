@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
     }
     end = clock();
     setlocale(LC_NUMERIC, "");
-    printf("execution time: %0.6f secs.\n",
+    printf("execution time: %0.6f secs.\t",
            (float) (end - start) / (float) CLOCKS_PER_SEC);
     printf("%s %d records\n", argv[0], size);
 
