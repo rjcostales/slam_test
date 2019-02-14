@@ -1,4 +1,4 @@
-C Code for testing
+# C Code for Small Linux Arm Machine (SLAM) Testing
 
 intops  - test integer operation
 fpops   - test floating point operation
