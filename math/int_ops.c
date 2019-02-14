@@ -9,7 +9,7 @@
 int main(int argc, char *argv[])
 {
     int integers[SIZE];
-    int result;
+    int result = 0;
     clock_t start, stop;
 
     setlocale(LC_NUMERIC, "");
