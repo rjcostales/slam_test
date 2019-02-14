@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     end = clock();
 
     setlocale(LC_NUMERIC, "");
-    printf("%s(%'d)=%'d in %'lu\n", *argv, n, f, count);
-    printf("execution time: %0.6f secs.\n",
+    printf("execution time: %0.6f secs.\t",
             (float) (end - start) / (float) CLOCKS_PER_SEC);
+    printf("%s(%'d)=%'d in %'lu\n", *argv, n, f, count);
 }

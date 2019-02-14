@@ -4,7 +4,7 @@
 #include <time.h>
 #include "io.h"
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
     char buffer[BUFFER];
 

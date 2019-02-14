@@ -1,3 +1,6 @@
+# Using linux time to measure execution time since write useses stdout to write to disk,
+# time outputs to stderr.
+
 echo "IO Test"
 
 time ./write > /dev/null
