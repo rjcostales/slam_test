@@ -9,7 +9,7 @@
 
 * pi_archemides   - estimate pi using Archemides algorithm
 * semi_cir_arc    - estimate arc of a semi cicle
-* sine_area       - estimate
+* sine_area       - estimate area under a sine curve
 
 * dhrystone       - Integer Test. See source code for notes.
 * whetstone       - Floating Point Test. See source code for notes.
