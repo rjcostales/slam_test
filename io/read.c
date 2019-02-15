@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "io.h"
+
+#define BUFFER  1024
 
 int main(int argc, char *argv[])
 {

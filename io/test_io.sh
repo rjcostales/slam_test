@@ -1,12 +1,12 @@
 # Using linux time to measure execution time since write useses stdout to write to disk,
 # time outputs to stderr.
 
-echo "IO Test"
+echo "IO Test 100MB write, read, copy & remove"
 
-time ./write > /dev/null
+time ./write 100 > /dev/null
 echo 'write null test'
 
-time ./write > test.txt
+time ./write 100 > test.txt
 echo 'write test'
 
 time ./read < test.txt
