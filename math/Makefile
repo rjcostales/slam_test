@@ -9,8 +9,11 @@ TGTS	:= $(patsubst %.c,%,$(SRCS))
 
 all:$(TGTS)
 
-$(TGTS):
+$(TGTS): dhrystone-reg
 	$(CC) $(CFLAGS) $@.c -o $@ $(LIBS)
 
+dhrystone-reg:
+	$(CC) $(CFLAGS) -DREG=register dhrystone.c -o $@
+
 clean:
-	rm -f $(TGTS) $(OBJS)
+	rm -f $(TGTS) dhrystone-reg $(OBJS)

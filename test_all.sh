@@ -4,7 +4,10 @@ echo ""
 cd math/
 make --silent clean
 make --silent
+echo "NO REG"
 ./dhrystone
+echo "REG"
+./dhrystone-reg
 ./whetstone
 ./test_ops.sh
 ./test_math.sh

@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     clock_t start, stop;
 
     start = clock();
-    for (int i = 0; i < LIMIT; i++) {
+    for (register int i = 0; i < LIMIT; i++) {
         real x = i * delta + delta / 2.0;
         real y = sin(x);
 

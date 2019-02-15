@@ -7,8 +7,8 @@
 
 typedef double real;
 
-#define square(x)      (x * (x))
-#define distance(x, y) sqrt((x * (x)) + (y * (y)))
+#define square(x)     (x*(x))
+#define distance(x,y) sqrt((x*(x))+(y*(y)))
 
 int main(int argc, char *argv[])
 {
@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     clock_t start, stop;
 
     start = clock();
-    for (int i = -(LIMIT - 1); i <= LIMIT; i++) {
+    for (register int i = -(LIMIT - 1); i <= LIMIT; i++) {
         real x = i / (real) LIMIT;
         real y = sqrt(1.0 - square(x));
 

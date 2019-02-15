@@ -11,7 +11,7 @@ bool isPrime(int n)
     if ((n % 2) == 0) {
         return false;
     } else {
-        for (int i = 3; i * i <= n; i += 2)
+        for (register int i = 3; i * i <= n; i += 2)
             if ((n % i) == 0)
                 return false;
     }
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     clock_t start, stop;
 
     start = clock();
-    for (int i = 1; i < MAX; i++)
+    for (register int i = 1; i < MAX; i++)
         if (isPrime(i))
             c++;
     stop = clock();

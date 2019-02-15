@@ -7,7 +7,7 @@ echo ""
 ./fp_ops
 echo ""
 
-./fibonacci 40
+./fibonacci 37
 echo ""
 
 ./primes

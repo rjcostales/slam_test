@@ -99,8 +99,14 @@
  *----------------DHRYSTONE VERSION 1.1 RESULTS BEGIN--------------------------
  *
  * MACHINE     MICROPROCESSOR   OPERATING       COMPILER        DHRYSTONES/SEC.
- * TYPE                         SYSTEM          NO REG  REGS
+ * TYPE                         SYSTEM                          NO REG  REGS
  * --------------------------   -------------   --------------  --------------
+ * RESULTS FOR SLAM TEST.
+ * PogoPlug V2   armv5@800MHz   Arch 4.4        gcc 8.2        647668  566251
+ * PogoPlug Pink armv5@1.2GHz   Arch 4.4        gcc 8.2        963391  843170
+ * RPI B+         arm6@700MHz   Arch 4.14       gcc 8.2        578034  485908
+ * RPI2 B         arm7@900MHz   Mint 18         gcc 5.4       1149425  927643
+ *
  * Apple IIe    65C02-1.02Mhz   DOS 3.3         Aztec CII v1.05i   37      37
  * -               Z80-2.5Mhz   CPM-80 v2.2     Aztec CII v1.05g   91      91
  * -                8086-8Mhz   RMX86 V6        Intel C-86 V2.0   197     203 LM??
@@ -133,7 +139,7 @@
  *----------------DHRYSTONE VERSION 1.0 RESULTS BEGIN--------------------------
  *
  * MACHINE     MICROPROCESSOR   OPERATING       COMPILER        DHRYSTONES/SEC.
- * TYPE                         SYSTEM          NO REG  REGS
+ * TYPE                         SYSTEM                          NO REG  REGS
  * --------------------------   ------------    -------------   --------------
  * Commodore 64     6510-1MHz   C64 ROM         C Power 2.8        36      36
  * HP-110        8086-5.33Mhz   MSDOS 2.11      Lattice 2.14      284     284
@@ -363,9 +369,9 @@
  *    The following program contains statements of a high-level programming
  *    language (C) in a distribution considered representative:
  *
- *    assignments            53%
+ *    assignments               53%
  *    control statements        32%
- *    procedure, function calls    15%
+ *    procedure, function calls 15%
  *
  *    100 statements are dynamically executed.  The program is balanced with
  *    respect to the three aspects:
@@ -382,9 +388,9 @@
  */
 
 /* Accuracy of timings and human fatigue controlled by next two lines */
-//#define LOOP    5000            /* Use this for slow or 16 bit machines */
-//#define LOOP    50000           /* Use this for slow or 16 bit machines */
-//#define LOOP    500000          /* Use this for faster machines */
+// #define LOOP    5000            /* Use this for slow or 16 bit machines */
+// #define LOOP    50000           /* Use this for slow or 16 bit machines */
+// #define LOOP    500000          /* Use this for faster machines */
 #define LOOP    5000000         /* MacBook Pro */
 
 /* Compiler dependent options */

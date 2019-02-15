@@ -2,4 +2,4 @@
 #define INDEX  MAX-1
 #define BUFFER MAX+1
 
-#define LEN 1000000
+#define LEN 100000
