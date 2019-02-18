@@ -21,5 +21,7 @@ gcc<br>
 make
 
 ## Instruction
-cd slam_test<br>
+<code>
+cd slam_test
 ./test_all.sh
+</code>
