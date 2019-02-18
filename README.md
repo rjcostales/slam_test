@@ -17,7 +17,7 @@
 * whetstone       - Floating Point Test. See source code for notes.
 
 ## Requirements
-gcc<br>
+gcc or clang<br>
 make
 
 ## Instruction
