@@ -22,6 +22,6 @@ make
 
 ## Instruction
 <code>
-cd slam_test/<br>
+cd slam_test/  <br>
 ./test_all.sh
 </code>
