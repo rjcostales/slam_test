@@ -17,9 +17,9 @@
 * whetstone       - Floating Point Test. See source code for notes.
 
 ## Requirements
-gcc
+gcc<br>
 make
 
 ## Instruction
-cd slam_test
+cd slam_test<br>
 ./test_all.sh
